@@ -29,9 +29,17 @@ module ffsr_pulse (rst, inc, dec, clk, init, out);
   assign temp_prev = {temp_out[INPUT_SIZE-2:0],1'b1};
   assign temp_next = {1'b0,temp_out[INPUT_SIZE-1:1]};
 
+  `ifndef BEHAVIORAL
+    //for structural, we need inverted inc and dec
+    wire incn, decn;  //inverted inc and dec
+    flip_bus flip_inc(.in(inc), .out(incn));
+    flip_bus flip_dec(.in(dec), .out(decn));
+  `endif
+  
   genvar i;
   generate
-    for(i=0; i<INPUT_SIZE; i++) begin
+    for(i=0; i<INPUT_SIZE; i=i+1)
+    begin : Loop1
       `ifdef BEHAVIORAL
         ffsr_pulse_bb_behavioral ffsr_pulse_bb(
           .rst(rst),
@@ -43,26 +51,20 @@ module ffsr_pulse (rst, inc, dec, clk, init, out);
           .prev(temp_prev[i]),
           .next(temp_next[i])
         );
-      `elseif   //behavioral ends, structural begins
-        //generate the incn and decn first
-        wire incn, decn;  //inverted inc and dec
-
-        flip_bus flip_inc(.in(inc), .out(dec));
-        flip_bus flip_dec(.in(dec), .out(dec));
-
+      `else //behavioral ends, structural begins
         ffsr_pulse_bb_structural ffsr_pulse_bb(
+          .decn(decn),
+          .incn(incn),
           .rst(rst),
           .inc(inc),
-          .incn(incn),
           .dec(dec),
-          .decn(decn),
           .clk(clk),
           .init(init[i]),
           .out(temp_out[i]),
           .prev(temp_prev[i]),
           .next(temp_next[i])
-        ); 
-      `endif
+        );
+      `endif    //rest all signals are same
     end
   endgenerate
 

@@ -22,14 +22,16 @@ module ffsr_pulse_test;
       $dumpvars(0, ffsr_pulse_test);
       clk = 0;
       init = 'b0;
-      rst = 1'b1;
+      rst = 1'b0;
       inc = 1'b0;
       dec = 1'b0;
-      #200;
+      #20ns;
+      rst = 1'b1;
+      #200ns;
       $finish;
   end
 
   always @* begin
-    clk = #10 ~clk;
+    clk = #10ns ~clk;
   end
 endmodule
