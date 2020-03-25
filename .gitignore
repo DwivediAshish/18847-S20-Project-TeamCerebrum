@@ -1,0 +1,13 @@
+# vcd files
+*.vcd
+*.vpd
+
+# any thing in the simv directory
+simv*
+simv/*
+
+# any dve file
+DVEfiles/*
+
+# random files
+.__afs*
