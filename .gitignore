@@ -11,3 +11,12 @@ DVEfiles/*
 
 # random files
 .__afs*
+
+# csrc file
+csrc*
+
+# temporary file
+*.swp
+
+# key files
+*.key
