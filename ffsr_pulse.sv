@@ -42,19 +42,11 @@ module ffsr_pulse (rst, inc, dec, clk, init, out);
     begin : Loop1
       `ifdef BEHAVIORAL
         ffsr_pulse_bb_behavioral ffsr_pulse_bb(
-          .rst(rst),
-          .inc(inc),
-          .dec(dec),
-          .clk(clk),
-          .init(init[i]),
-          .out(temp_out[i]),
-          .prev(temp_prev[i]),
-          .next(temp_next[i])
-        );
       `else //behavioral ends, structural begins
         ffsr_pulse_bb_structural ffsr_pulse_bb(
           .decn(decn),
           .incn(incn),
+      `endif    //rest all signals are same
           .rst(rst),
           .inc(inc),
           .dec(dec),
@@ -64,7 +56,15 @@ module ffsr_pulse (rst, inc, dec, clk, init, out);
           .prev(temp_prev[i]),
           .next(temp_next[i])
         );
-      `endif    //rest all signals are same
+        //  .rst(rst),
+        //  .inc(inc),
+        //  .dec(dec),
+        //  .clk(clk),
+        //  .init(init[i]),
+        //  .out(temp_out[i]),
+        //  .prev(temp_prev[i]),
+        //  .next(temp_next[i])
+        //);
     end
   endgenerate
 
