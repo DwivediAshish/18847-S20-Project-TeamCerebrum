@@ -11,15 +11,60 @@ rst   inc   dec   Operation
 
 module ffsr_pulse (rst, inc, dec, clk, init, out); 
 
-    parameter INPUT_SIZE = 8;
+  parameter INPUT_SIZE = 8;
+  
+  input wire rst;     //reset
+  input wire inc;     //increment the value
+  input wire dec;     //decrement the value
+  input wire [INPUT_SIZE-1:0] init;    //initial value
+  output wire [INPUT_SIZE-1:0] out;    //current output
+  input wire clk;
+  
+  /* Declare any intermediate wires you use */
+  wire [INPUT_SIZE-1:0] temp_out;
+  wire [INPUT_SIZE-1:0] temp_prev;
+  wire [INPUT_SIZE-1:0] temp_next;
+  
+  // This assumes that INPUT_SIZE>1
+  assign temp_prev = {temp_out[INPUT_SIZE-2:0],1'b1};
+  assign temp_next = {1'b0,temp_out[INPUT_SIZE-1:1]};
 
-    input wire rst;     //reset
-    input wire inc;     //increment the value
-    input wire dec;     //decrement the value
-    input wire [0:INPUT_SIZE-1] init;    //initial value
-    output wire [0:INPUT_SIZE-1] out;    //current output
-    input wire clk;
+  genvar i;
+  generate
+    for(i=0; i<INPUT_SIZE; i++) begin
+      `ifdef BEHAVIORAL
+        ffsr_pulse_bb_behavioral ffsr_pulse_bb(
+          .rst(rst),
+          .inc(inc),
+          .dec(dec),
+          .clk(clk),
+          .init(init[i]),
+          .out(temp_out[i]),
+          .prev(temp_prev[i]),
+          .next(temp_next[i])
+        );
+      `elseif   //behavioral ends, structural begins
+        //generate the incn and decn first
+        wire incn, decn;  //inverted inc and dec
 
-    /* Declare any intermediate wires you use */
+        flip_bus flip_inc(.in(inc), .out(dec));
+        flip_bus flip_dec(.in(dec), .out(dec));
 
+        ffsr_pulse_bb_structural ffsr_pulse_bb(
+          .rst(rst),
+          .inc(inc),
+          .incn(incn),
+          .dec(dec),
+          .decn(decn),
+          .clk(clk),
+          .init(init[i]),
+          .out(temp_out[i]),
+          .prev(temp_prev[i]),
+          .next(temp_next[i])
+        ); 
+      `endif
+    end
+  endgenerate
+
+  assign out = temp_out;
 endmodule
