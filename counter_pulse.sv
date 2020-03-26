@@ -1,9 +1,10 @@
-// Negedge Inpu Counter 
+// Pulse Input Counter 
+// In progress
 
 
 `timescale 1ns / 1ps
 
-module counter_negedge
+module counter_pulse
 #
 (
     parameter MAX_VALUE = 8
@@ -34,4 +35,4 @@ module counter_negedge
         end
     end
 
-endmodule : counter_negedge
+endmodule : counter_pulse
