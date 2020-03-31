@@ -1,0 +1,82 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : ffsr_pulse
+Version: J-2014.09-SP4
+Date   : Tue Mar 31 14:46:02 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: Loop1[6].ffsr_pulse_bb/out_reg_reg
+              (rising edge-triggered flip-flop)
+  Endpoint: out[6] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ffsr_pulse         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  Loop1[6].ffsr_pulse_bb/out_reg_reg/CK (DFFRS_X1)        0.00       0.00 r
+  Loop1[6].ffsr_pulse_bb/out_reg_reg/Q (DFFRS_X1)         0.11       0.11 r
+  Loop1[6].ffsr_pulse_bb/out (ffsr_pulse_bb_structural_2)
+                                                          0.00       0.11 r
+  out[6] (out)                                            0.00       0.11 r
+  data arrival time                                                  0.11
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: Loop1[5].ffsr_pulse_bb/out_reg_reg
+              (rising edge-triggered flip-flop)
+  Endpoint: out[5] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ffsr_pulse         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  Loop1[5].ffsr_pulse_bb/out_reg_reg/CK (DFFRS_X1)        0.00       0.00 r
+  Loop1[5].ffsr_pulse_bb/out_reg_reg/Q (DFFRS_X1)         0.11       0.11 r
+  Loop1[5].ffsr_pulse_bb/out (ffsr_pulse_bb_structural_3)
+                                                          0.00       0.11 r
+  out[5] (out)                                            0.00       0.11 r
+  data arrival time                                                  0.11
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: Loop1[4].ffsr_pulse_bb/out_reg_reg
+              (rising edge-triggered flip-flop)
+  Endpoint: out[4] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ffsr_pulse         5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  Loop1[4].ffsr_pulse_bb/out_reg_reg/CK (DFFRS_X1)        0.00       0.00 r
+  Loop1[4].ffsr_pulse_bb/out_reg_reg/Q (DFFRS_X1)         0.11       0.11 r
+  Loop1[4].ffsr_pulse_bb/out (ffsr_pulse_bb_structural_4)
+                                                          0.00       0.11 r
+  out[4] (out)                                            0.00       0.11 r
+  data arrival time                                                  0.11
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

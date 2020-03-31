@@ -20,3 +20,7 @@ csrc*
 
 # key files
 *.key
+
+*.pvl
+*.syn
+*.log
