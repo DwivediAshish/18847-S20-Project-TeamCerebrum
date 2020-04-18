@@ -1,4 +1,4 @@
-analyze -library WORK -format sverilog {ffsr_pulse_bb_structural.sv flip_bus.sv ffsr_pulse.sv}
+analyze -library WORK -format sverilog {../ffsr_pulse_bb_structural.sv ../flip_bus.sv ../ffsr_pulse.sv}
 
 elaborate ffsr_pulse -architecture verilog -library WORK
 
@@ -20,10 +20,10 @@ set_clock_uncertainty $CLK_SKEW my_clock
 
 compile -map_effort low -area_effort none -power_effort none -ungroup_all
 
-report_area              > simresults/ffsr_pulse_structural.area
-report_power             > simresults/ffsr_pulse_structural.pow
-report_cell              > simresults/ffsr_pulse_structural.cell
-report_timing -nworst 3  > simresults/ffsr_pulse_structural.tim
+report_area              > ../simresults/ffsr_pulse_structural.area
+report_power             > ../simresults/ffsr_pulse_structural.pow
+report_cell              > ../simresults/ffsr_pulse_structural.cell
+report_timing -nworst 3  > ../simresults/ffsr_pulse_structural.tim
 
 check_timing
 check_design

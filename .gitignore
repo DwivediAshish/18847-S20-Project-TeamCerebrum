@@ -24,3 +24,12 @@ csrc*
 *.pvl
 *.syn
 *.log
+
+*.mr
+
+synthesis/*
+
+.*
+
+*.ddc
+*.svf

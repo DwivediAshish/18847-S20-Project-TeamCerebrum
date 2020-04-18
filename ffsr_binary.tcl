@@ -1,4 +1,4 @@
-analyze -library WORK -format sverilog {ffsr_binary.sv}
+analyze -library WORK -format sverilog {../ffsr_binary.sv}
 
 elaborate ffsr_binary -architecture verilog -library WORK
 
@@ -20,10 +20,10 @@ set_clock_uncertainty $CLK_SKEW my_clock
 
 compile -map_effort low -area_effort none -power_effort none -ungroup_all
 
-report_area              > simresults/ffsr_binary.area
-report_power             > simresults/ffsr_binary.pow
-report_cell              > simresults/ffsr_binary.cell
-report_timing -nworst 3  > simresults/ffsr_binary.tim
+report_area              > ../simresults/ffsr_binary.area
+report_power             > ../simresults/ffsr_binary.pow
+report_cell              > ../simresults/ffsr_binary.cell
+report_timing -nworst 3  > ../simresults/ffsr_binary.tim
 
 check_timing
 check_design

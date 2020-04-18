@@ -1,4 +1,4 @@
-analyze -library WORK -define BEHAVIORAL -format sverilog {ffsr_pulse_bb_behavioral.sv ffsr_pulse.sv ffsr_spike.sv}
+analyze -library WORK -define BEHAVIORAL -format sverilog {../ffsr_pulse_bb_behavioral.sv ../ffsr_pulse.sv ../ffsr_spike.sv}
 
 elaborate ffsr_pulse -architecture verilog -library WORK
 elaborate ffsr_spike -architecture verilog -library WORK
@@ -19,10 +19,10 @@ set_clock_uncertainty $CLK_SKEW my_clock
 
 compile -map_effort low -area_effort none -power_effort none -ungroup_all 
 
-report_area              > simresults/ffsr_spike_behavioral.area
-report_power             > simresults/ffsr_spike_behavioral.pow
-report_cell              > simresults/ffsr_spike_behavioral.cell
-report_timing -nworst 3  > simresults/ffsr_spike_behavioral.tim
+report_area              > ../simresults/ffsr_spike_behavioral.area
+report_power             > ../simresults/ffsr_spike_behavioral.pow
+report_cell              > ../simresults/ffsr_spike_behavioral.cell
+report_timing -nworst 3  > ../simresults/ffsr_spike_behavioral.tim
 
 check_timing
 check_design
