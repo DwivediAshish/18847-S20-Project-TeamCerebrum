@@ -17,10 +17,11 @@ set_clock_uncertainty $CLK_SKEW my_clock
 # set_input_delay $INPUT_DELAY -max -clock my_clock [remove_from_collection [all_inputs] my_clock]
 # set_output_delay $OUTPUT_DELAY -max -clock my_clock [all_outputs]
 
-compile -map_effort low -area_effort none -power_effort none
+compile -map_effort low -area_effort none -power_effort none -ungroup_all 
 
 report_area              > simresults/ffsr_spike_behavioral.area
 report_power             > simresults/ffsr_spike_behavioral.pow
+report_cell              > simresults/ffsr_spike_behavioral.cell
 report_timing -nworst 3  > simresults/ffsr_spike_behavioral.tim
 
 check_timing

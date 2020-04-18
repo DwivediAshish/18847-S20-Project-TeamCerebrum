@@ -1,0 +1,254 @@
+ 
+****************************************
+Report : cell
+Design : ffsr_spike
+Version: J-2014.09-SP4
+Date   : Sat Apr 11 17:52:43 2020
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U3                        INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+U5                        NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+U6                        NOR2_X4         NangateOpenCellLibrary
+                                                          2.394000  
+U7                        NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+U8                        NAND2_X1        NangateOpenCellLibrary
+                                                          0.798000  
+U9                        NAND2_X1        NangateOpenCellLibrary
+                                                          0.798000  
+U10                       INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+U11                       AOI21_X2        NangateOpenCellLibrary
+                                                          1.862000  
+dec_reg_reg               DFFS_X1         NangateOpenCellLibrary
+                                                          5.320000  n
+i_ffsr_pulse/Loop1[0].ffsr_pulse_bb/U3
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[0].ffsr_pulse_bb/U4
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[0].ffsr_pulse_bb/U5
+                          AND2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[0].ffsr_pulse_bb/U6
+                          NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[0].ffsr_pulse_bb/U8
+                          AND3_X2         NangateOpenCellLibrary
+                                                          1.596000  
+i_ffsr_pulse/Loop1[0].ffsr_pulse_bb/U9
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[0].ffsr_pulse_bb/U10
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[0].ffsr_pulse_bb/out_reg_reg
+                          DFFRS_X1        NangateOpenCellLibrary
+                                                          6.384000  n
+i_ffsr_pulse/Loop1[1].ffsr_pulse_bb/U3
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[1].ffsr_pulse_bb/U4
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[1].ffsr_pulse_bb/U5
+                          AND2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[1].ffsr_pulse_bb/U6
+                          NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[1].ffsr_pulse_bb/U7
+                          AOI221_X2       NangateOpenCellLibrary
+                                                          2.926000  
+i_ffsr_pulse/Loop1[1].ffsr_pulse_bb/U8
+                          AND3_X2         NangateOpenCellLibrary
+                                                          1.596000  
+i_ffsr_pulse/Loop1[1].ffsr_pulse_bb/U9
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[1].ffsr_pulse_bb/U10
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[1].ffsr_pulse_bb/out_reg_reg
+                          DFFRS_X1        NangateOpenCellLibrary
+                                                          6.384000  n
+i_ffsr_pulse/Loop1[2].ffsr_pulse_bb/U3
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[2].ffsr_pulse_bb/U4
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[2].ffsr_pulse_bb/U5
+                          AND2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[2].ffsr_pulse_bb/U6
+                          NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[2].ffsr_pulse_bb/U7
+                          AOI221_X2       NangateOpenCellLibrary
+                                                          2.926000  
+i_ffsr_pulse/Loop1[2].ffsr_pulse_bb/U8
+                          AND3_X2         NangateOpenCellLibrary
+                                                          1.596000  
+i_ffsr_pulse/Loop1[2].ffsr_pulse_bb/U9
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[2].ffsr_pulse_bb/U10
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[2].ffsr_pulse_bb/out_reg_reg
+                          DFFRS_X1        NangateOpenCellLibrary
+                                                          6.384000  n
+i_ffsr_pulse/Loop1[3].ffsr_pulse_bb/U3
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[3].ffsr_pulse_bb/U4
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[3].ffsr_pulse_bb/U5
+                          AND2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[3].ffsr_pulse_bb/U6
+                          NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[3].ffsr_pulse_bb/U7
+                          AOI221_X2       NangateOpenCellLibrary
+                                                          2.926000  
+i_ffsr_pulse/Loop1[3].ffsr_pulse_bb/U8
+                          AND3_X2         NangateOpenCellLibrary
+                                                          1.596000  
+i_ffsr_pulse/Loop1[3].ffsr_pulse_bb/U9
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[3].ffsr_pulse_bb/U10
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[3].ffsr_pulse_bb/out_reg_reg
+                          DFFRS_X1        NangateOpenCellLibrary
+                                                          6.384000  n
+i_ffsr_pulse/Loop1[4].ffsr_pulse_bb/U3
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[4].ffsr_pulse_bb/U4
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[4].ffsr_pulse_bb/U5
+                          AND2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[4].ffsr_pulse_bb/U6
+                          NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[4].ffsr_pulse_bb/U7
+                          AOI221_X2       NangateOpenCellLibrary
+                                                          2.926000  
+i_ffsr_pulse/Loop1[4].ffsr_pulse_bb/U8
+                          AND3_X2         NangateOpenCellLibrary
+                                                          1.596000  
+i_ffsr_pulse/Loop1[4].ffsr_pulse_bb/U9
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[4].ffsr_pulse_bb/U10
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[4].ffsr_pulse_bb/out_reg_reg
+                          DFFRS_X1        NangateOpenCellLibrary
+                                                          6.384000  n
+i_ffsr_pulse/Loop1[5].ffsr_pulse_bb/U3
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[5].ffsr_pulse_bb/U4
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[5].ffsr_pulse_bb/U5
+                          AND2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[5].ffsr_pulse_bb/U6
+                          NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[5].ffsr_pulse_bb/U7
+                          AOI221_X2       NangateOpenCellLibrary
+                                                          2.926000  
+i_ffsr_pulse/Loop1[5].ffsr_pulse_bb/U8
+                          AND3_X2         NangateOpenCellLibrary
+                                                          1.596000  
+i_ffsr_pulse/Loop1[5].ffsr_pulse_bb/U9
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[5].ffsr_pulse_bb/U10
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[5].ffsr_pulse_bb/out_reg_reg
+                          DFFRS_X1        NangateOpenCellLibrary
+                                                          6.384000  n
+i_ffsr_pulse/Loop1[6].ffsr_pulse_bb/U3
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[6].ffsr_pulse_bb/U4
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[6].ffsr_pulse_bb/U5
+                          AND2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[6].ffsr_pulse_bb/U6
+                          NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[6].ffsr_pulse_bb/U7
+                          AOI221_X2       NangateOpenCellLibrary
+                                                          2.926000  
+i_ffsr_pulse/Loop1[6].ffsr_pulse_bb/U8
+                          AND3_X2         NangateOpenCellLibrary
+                                                          1.596000  
+i_ffsr_pulse/Loop1[6].ffsr_pulse_bb/U9
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[6].ffsr_pulse_bb/U10
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[6].ffsr_pulse_bb/out_reg_reg
+                          DFFRS_X1        NangateOpenCellLibrary
+                                                          6.384000  n
+i_ffsr_pulse/Loop1[7].ffsr_pulse_bb/U3
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[7].ffsr_pulse_bb/U4
+                          INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+i_ffsr_pulse/Loop1[7].ffsr_pulse_bb/U5
+                          AND2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[7].ffsr_pulse_bb/U6
+                          NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+i_ffsr_pulse/Loop1[7].ffsr_pulse_bb/U8
+                          AND3_X2         NangateOpenCellLibrary
+                                                          1.596000  
+i_ffsr_pulse/Loop1[7].ffsr_pulse_bb/U9
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[7].ffsr_pulse_bb/U10
+                          INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/Loop1[7].ffsr_pulse_bb/out_reg_reg
+                          DFFRS_X1        NangateOpenCellLibrary
+                                                          6.384000  n
+i_ffsr_pulse/flip_dec/U1  INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+i_ffsr_pulse/flip_inc/U1  INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+inc_reg_reg               DFFS_X1         NangateOpenCellLibrary
+                                                          5.320000  n
+--------------------------------------------------------------------------------
+Total 82 cells                                            146.034000
+1

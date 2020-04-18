@@ -8,7 +8,7 @@ Report : power
         -analysis_effort low
 Design : ffsr_pulse
 Version: J-2014.09-SP4
-Date   : Tue Mar 31 14:46:02 2020
+Date   : Sat Apr 11 17:52:31 2020
 ****************************************
 
 
@@ -34,12 +34,12 @@ Power-specific unit information :
     Leakage Power Units = 1nW
 
 
-  Cell Internal Power  =   2.8567 nW   (62%)
-  Net Switching Power  =   1.7817 nW   (38%)
+  Cell Internal Power  =   2.7905 nW   (61%)
+  Net Switching Power  =   1.8062 nW   (39%)
                          ---------
-Total Dynamic Power    =   4.6383 nW  (100%)
+Total Dynamic Power    =   4.5967 nW  (100%)
 
-Cell Leakage Power     =   3.3101 uW
+Cell Leakage Power     =   3.3180 uW
 
 Information: report_power power group summary does not include estimated clock tree power. (PWR-789)
 
@@ -51,8 +51,8 @@ memory             0.0000            0.0000            0.0000            0.0000 
 black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
 clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
 register           0.0000            0.0000            0.0000            0.0000  (   0.00%)
-sequential     8.0354e-04        3.7417e-04          812.9131            0.8141  (  24.56%)
-combinational  2.0531e-03        1.4075e-03        2.4972e+03            2.5006  (  75.44%)
+sequential     7.9811e-04        3.6187e-04          813.1868            0.8143  (  24.51%)
+combinational  1.9924e-03        1.4443e-03        2.5048e+03            2.5082  (  75.49%)
 --------------------------------------------------------------------------------------------------
-Total          2.8567e-03 uW     1.7817e-03 uW     3.3101e+03 nW         3.3147 uW
+Total          2.7905e-03 uW     1.8062e-03 uW     3.3180e+03 nW         3.3226 uW
 1

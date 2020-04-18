@@ -1,0 +1,58 @@
+ 
+****************************************
+Report : cell
+Design : ffsr_binary
+Version: J-2014.09-SP4
+Date   : Sat Apr 11 17:06:23 2020
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U3                        INV_X1          NangateOpenCellLibrary
+                                                          0.532000  
+U4                        OAI21_X2        NangateOpenCellLibrary
+                                                          1.862000  
+U5                        AOI221_X2       NangateOpenCellLibrary
+                                                          2.926000  
+U6                        OAI22_X2        NangateOpenCellLibrary
+                                                          2.394000  
+U7                        AOI22_X2        NangateOpenCellLibrary
+                                                          2.394000  
+U8                        OAI221_X2       NangateOpenCellLibrary
+                                                          2.926000  
+U9                        XNOR2_X2        NangateOpenCellLibrary
+                                                          2.660000  
+U10                       NOR2_X2         NangateOpenCellLibrary
+                                                          1.330000  
+U11                       INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+U12                       INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+U13                       INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+U14                       INV_X2          NangateOpenCellLibrary
+                                                          0.798000  
+U15                       NAND2_X1        NangateOpenCellLibrary
+                                                          0.798000  
+U16                       OAI33_X1        NangateOpenCellLibrary
+                                                          1.862000  
+U17                       NAND2_X1        NangateOpenCellLibrary
+                                                          0.798000  
+U18                       NAND2_X1        NangateOpenCellLibrary
+                                                          0.798000  
+storage_reg[0]            DFFR_X1         NangateOpenCellLibrary
+                                                          5.320000  n
+storage_reg[1]            DFFR_X1         NangateOpenCellLibrary
+                                                          5.320000  n
+storage_reg[2]            DFFR_X1         NangateOpenCellLibrary
+                                                          5.320000  n
+--------------------------------------------------------------------------------
+Total 19 cells                                            40.432001
+1

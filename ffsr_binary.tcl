@@ -1,8 +1,8 @@
-analyze -library WORK -define BEHAVIORAL -format sverilog {ffsr_pulse_bb_behavioral.sv ffsr_pulse.sv}
+analyze -library WORK -format sverilog {ffsr_binary.sv}
 
-elaborate ffsr_pulse -architecture verilog -library WORK
+elaborate ffsr_binary -architecture verilog -library WORK
 
-set_dont_touch ffsr_pulse
+set_dont_touch ffsr_binary
 
 # Create user defined variables 
 set CLK_PERIOD 10000.00 
@@ -20,10 +20,10 @@ set_clock_uncertainty $CLK_SKEW my_clock
 
 compile -map_effort low -area_effort none -power_effort none -ungroup_all
 
-report_area              > simresults/ffsr_pulse_behavioral.area
-report_power             > simresults/ffsr_pulse_behavioral.pow
-report_cell              > simresults/ffsr_pulse_behavioral.cell
-report_timing -nworst 3  > simresults/ffsr_pulse_behavioral.tim
+report_area              > simresults/ffsr_binary.area
+report_power             > simresults/ffsr_binary.pow
+report_cell              > simresults/ffsr_binary.cell
+report_timing -nworst 3  > simresults/ffsr_binary.tim
 
 check_timing
 check_design

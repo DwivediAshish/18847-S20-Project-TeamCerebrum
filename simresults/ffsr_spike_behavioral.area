@@ -3,7 +3,7 @@
 Report : area
 Design : ffsr_spike
 Version: J-2014.09-SP4
-Date   : Tue Mar 31 15:33:06 2020
+Date   : Sat Apr 11 17:52:37 2020
 ****************************************
 
 Information: Updating design information... (UID-85)
@@ -12,20 +12,20 @@ Library(s) Used:
     NangateOpenCellLibrary (File: /afs/ece.cmu.edu/usr/ashishd/Private/18847/18847-S20-Project/nangateopencelllibrary_typical_ccs.db)
 
 Number of ports:                           20
-Number of nets:                            25
-Number of cells:                            6
-Number of combinational cells:              3
-Number of sequential cells:                 2
+Number of nets:                           112
+Number of cells:                          100
+Number of combinational cells:             90
+Number of sequential cells:                10
 Number of macros/black boxes:               0
-Number of buf/inv:                          1
-Number of references:                       4
+Number of buf/inv:                         42
+Number of references:                       9
 
-Combinational area:                 79.800001
-Buf/Inv area:                       23.940000
+Combinational area:                 84.854000
+Buf/Inv area:                       28.994000
 Noncombinational area:              61.711999
 Macro/Black Box area:                0.000000
 Net Interconnect area:      undefined  (Wire load has zero net area)
 
-Total cell area:                   141.512000
+Total cell area:                   146.565999
 Total area:                 undefined
 1

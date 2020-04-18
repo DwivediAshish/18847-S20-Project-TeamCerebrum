@@ -7,7 +7,7 @@ Report : timing
         -max_paths 3
 Design : ffsr_pulse
 Version: J-2014.09-SP4
-Date   : Tue Mar 31 14:44:49 2020
+Date   : Sat Apr 11 17:52:24 2020
 ****************************************
 
 Operating Conditions: typical   Library: NangateOpenCellLibrary
@@ -27,8 +27,6 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   Loop1[6].ffsr_pulse_bb/out_reg_reg/CK (DFFRS_X1)        0.00       0.00 r
   Loop1[6].ffsr_pulse_bb/out_reg_reg/Q (DFFRS_X1)         0.10       0.10 r
-  Loop1[6].ffsr_pulse_bb/out (ffsr_pulse_bb_behavioral_2)
-                                                          0.00       0.10 r
   out[6] (out)                                            0.00       0.10 r
   data arrival time                                                  0.10
   --------------------------------------------------------------------------
@@ -49,8 +47,6 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   Loop1[5].ffsr_pulse_bb/out_reg_reg/CK (DFFRS_X1)        0.00       0.00 r
   Loop1[5].ffsr_pulse_bb/out_reg_reg/Q (DFFRS_X1)         0.10       0.10 r
-  Loop1[5].ffsr_pulse_bb/out (ffsr_pulse_bb_behavioral_3)
-                                                          0.00       0.10 r
   out[5] (out)                                            0.00       0.10 r
   data arrival time                                                  0.10
   --------------------------------------------------------------------------
@@ -71,8 +67,6 @@ Wire Load Model Mode: top
   --------------------------------------------------------------------------
   Loop1[4].ffsr_pulse_bb/out_reg_reg/CK (DFFRS_X1)        0.00       0.00 r
   Loop1[4].ffsr_pulse_bb/out_reg_reg/Q (DFFRS_X1)         0.10       0.10 r
-  Loop1[4].ffsr_pulse_bb/out (ffsr_pulse_bb_behavioral_4)
-                                                          0.00       0.10 r
   out[4] (out)                                            0.00       0.10 r
   data arrival time                                                  0.10
   --------------------------------------------------------------------------
