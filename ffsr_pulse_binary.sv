@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module ffsr_binary (rst, inc, dec, clk, out); 
+module ffsr_pulse_binary (rst, inc, dec, clk, out); 
 
 input wire rst;     //reset
 input wire inc;     //increment the value
