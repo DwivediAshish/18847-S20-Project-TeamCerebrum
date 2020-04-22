@@ -35,10 +35,10 @@ input wire clk;
       storage <= 3'b0;
     end
     else begin
-      if(inc_pulse & ~dec_pulse) begin
+      if(inc_pulse & (storage != 3'b111)) begin
         storage <= storage + 3'b1;
       end
-      else if(~inc_pulse & dec_pulse) begin
+      else if(dec_pulse & (storage != 3'b000)) begin
         storage <= storage - 3'b1;
       end
       else begin

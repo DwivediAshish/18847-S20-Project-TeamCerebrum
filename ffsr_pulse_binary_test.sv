@@ -10,7 +10,7 @@ module ffsr_pulse_binary_test;
   logic [2:0] out;    //current output
   logic clk;
   
-  ffsr_pulse_binary_opt DUT (.rst(rst), .inc(inc), .dec(dec),
+  ffsr_pulse_binary DUT (.rst(rst), .inc(inc), .dec(dec),
                   .clk(clk), .out(out));
   
   initial

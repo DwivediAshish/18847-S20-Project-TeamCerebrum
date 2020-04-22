@@ -15,10 +15,10 @@ always @(posedge clk or posedge rst)begin
     storage <= 3'b0;
   end
   else begin
-    if(inc & ~dec) begin
+    if(inc & (storage != 3'b111)) begin
       storage <= storage + 3'b1;
     end
-    else if(~inc & dec) begin
+    else if(dec & (storage != 3'b000)) begin
       storage <= storage - 3'b1;
     end
     else begin
