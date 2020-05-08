@@ -1,0 +1,31 @@
+ 
+****************************************
+Report : area
+Design : ffsr_pulse
+Version: J-2014.09-SP4
+Date   : Sat Apr 11 17:52:23 2020
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /afs/ece.cmu.edu/usr/ashishd/Private/18847/18847-S20-Project/nangateopencelllibrary_typical_ccs.db)
+
+Number of ports:                           20
+Number of nets:                           107
+Number of cells:                           95
+Number of combinational cells:             87
+Number of sequential cells:                 8
+Number of macros/black boxes:               0
+Number of buf/inv:                         41
+Number of references:                       7
+
+Combinational area:                 79.534000
+Buf/Inv area:                       28.462000
+Noncombinational area:              51.071999
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                   130.605999
+Total area:                 undefined
+1

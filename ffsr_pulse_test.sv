@@ -18,20 +18,65 @@ module ffsr_pulse_test;
   
   initial
   begin
+      clk = 0;
       $dumpfile("ffsr_pulse.vcd"); // Change this name as required
       $dumpvars(0, ffsr_pulse_test);
-      clk = 0;
-      init = 'b0;
+      init = 16'b0001111;
       rst = 1'b0;
       inc = 1'b0;
       dec = 1'b0;
-      #20ns;
+      #5ns;
       rst = 1'b1;
-      #200ns;
+      #40ns;
+      @(posedge clk);
+      #0;
+      rst = 1'b0;
+      inc = 1'b0;
+      dec = 1'b0;
+      @(posedge clk);
+      @(posedge clk);
+      @(posedge clk);
+      #0;
+      inc = 1'b1;
+      dec = 1'b0;
+      @(posedge clk);
+      #0;
+      inc = 1'b0;
+      dec = 1'b0;
+      @(posedge clk);
+      @(posedge clk);
+      @(posedge clk);
+      #0;
+      inc = 1'b1;
+      dec = 1'b0;
+      @(posedge clk);
+      @(posedge clk);
+      @(posedge clk);
+      #0;
+      inc = 1'b0;
+      dec = 1'b0;
+      @(posedge clk);
+      @(posedge clk);
+      @(posedge clk);
+      #0;
+      inc = 1'b0;
+      dec = 1'b1;
+      @(posedge clk);
+      #0;
+      inc = 1'b0;
+      dec = 1'b0;
+      @(posedge clk);
+      @(posedge clk);
+      @(posedge clk);
+      #0;
+      inc = 1'b0;
+      dec = 1'b1;
+      @(posedge clk);
+      @(posedge clk);
       $finish;
   end
 
-  always @* begin
-    clk = #10ns ~clk;
+  always begin
+    #10ns clk = ~clk;
   end
 endmodule

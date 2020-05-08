@@ -1,0 +1,76 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : ffsr_binary
+Version: J-2014.09-SP4
+Date   : Sat Apr 18 14:02:02 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: storage_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ffsr_binary        5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  storage_reg[1]/CK (DFFR_X1)              0.00       0.00 r
+  storage_reg[1]/Q (DFFR_X1)               0.12       0.12 r
+  out[1] (out)                             0.00       0.13 r
+  data arrival time                                   0.13
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: storage_reg[0]
+              (rising edge-triggered flip-flop)
+  Endpoint: out[0] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ffsr_binary        5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  storage_reg[0]/CK (DFFR_X1)              0.00       0.00 r
+  storage_reg[0]/Q (DFFR_X1)               0.12       0.12 r
+  out[0] (out)                             0.00       0.12 r
+  data arrival time                                   0.12
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: storage_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: out[1] (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ffsr_binary        5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  storage_reg[1]/CK (DFFR_X1)              0.00       0.00 r
+  storage_reg[1]/Q (DFFR_X1)               0.10       0.10 f
+  out[1] (out)                             0.00       0.10 f
+  data arrival time                                   0.10
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

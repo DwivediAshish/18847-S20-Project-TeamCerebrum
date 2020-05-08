@@ -20,3 +20,18 @@ csrc*
 
 # key files
 *.key
+<<<<<<< HEAD
+=======
+
+*.pvl
+*.syn
+*.log
+
+*.mr
+
+synthesis/*
+
+.*
+
+*.ddc
+*.svf
