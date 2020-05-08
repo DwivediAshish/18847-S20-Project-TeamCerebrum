@@ -1,0 +1,4 @@
+SDF_FILE = "../../par/FLOW/WORK/signoff.sdf",
+LOG_FILE = "./sdf.log",
+MTM_CONTROL = "MAXIMUM",
+SCOPE = tb.inst_chip;

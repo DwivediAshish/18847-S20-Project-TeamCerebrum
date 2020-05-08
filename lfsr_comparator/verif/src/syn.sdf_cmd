@@ -1,0 +1,4 @@
+SDF_FILE = "../../syn/WORK/outputs/chip_m.sdf",
+LOG_FILE = "./sdf.log",
+MTM_CONTROL = "MAXIMUM",
+SCOPE = tb.inst_chip;

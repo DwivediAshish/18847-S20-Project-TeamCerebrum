@@ -2,9 +2,21 @@
 *.vcd
 *.vpd
 
+
+*.trn
+*.history
+*.log
+*.dsn
+
+.simvision*
+
 # any thing in the simv directory
 simv*
 simv/*
+
+# anything in xcelium directory
+xcelium.d*
+xcelium.d/*
 
 # any dve file
 DVEfiles/*
