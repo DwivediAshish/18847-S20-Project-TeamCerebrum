@@ -1,0 +1,21 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-XLMODE
+./xcelium.d/run.lnx8664.19.03.d
+-RUNMODE
+../../rtl/comp_pulse/comp_pulse.sv
+../../rtl/comp_pulse/comp_tb.sv
+../../rtl/register.sv
+/afs/ece.cmu.edu/class/ece725/gpdk045/libs/gsclib045_svt_v4.4/gsclib045/verilog/fast_vdd1v0_basicCells.v
+/afs/ece.cmu.edu/class/ece725/gpdk045/libs/giolib045_v3.2/giolib045/vlog/pads_TT_s1vg.v
+-CDSLIB
+./xcelium.d/run.lnx8664.19.03.d/cdsrun.lib
+-HDLVAR
+./xcelium.d/run.lnx8664.19.03.d/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./xcelium.d/run.lnx8664.19.03.d/xllibs
+-ALLOWUNBOUND

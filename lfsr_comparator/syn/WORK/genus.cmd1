@@ -1,0 +1,10 @@
+# Cadence Genus(TM) Synthesis Solution, Version 18.14-s037_1, built Mar 27 2019 12:19:21
+
+# Date: Wed Apr 29 00:08:24 2020
+# Host: ece024.ece.local.cmu.edu (x86_64 w/Linux 3.10.0-1062.9.1.el7.x86_64) (8cores*32cpus*2physical cpus*Intel(R) Xeon(R) Silver 4208 CPU @ 2.10GHz 11264KB)
+# OS:   Red Hat Enterprise Linux Server release 7.7 (Maipo)
+
+source ../src/run.tcl
+# entering suspend mode
+report_gates
+exit

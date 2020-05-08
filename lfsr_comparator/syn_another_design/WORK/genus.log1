@@ -1,0 +1,2884 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2018 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 18.14-s037_1, built Wed Mar 27 09:19:21 PDT 2019
+Options: -files ../src/run.tcl 
+Date:    Mon Apr 27 16:06:37 2020
+Host:    ece000.ece.local.cmu.edu (x86_64 w/Linux 3.10.0-1062.12.1.el7.x86_64) (6cores*24cpus*2physical cpus*Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz 15360KB) (65578904KB)
+OS:      Red Hat Enterprise Linux Server release 7.7 (Maipo)
+
+Checking out license: Genus_Synthesis
+
+Loading tool scripts...
+
+Finished loading tool scripts (24 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source ../src/run.tcl
+#@ Begin verbose source src/run.tcl
+@file(run.tcl) 3: if {[file exists /proc/cpuinfo]} {
+  sh grep "model name" /proc/cpuinfo
+  sh grep "cpu MHz"    /proc/cpuinfo
+}
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+model name	: Intel(R) Xeon(R) CPU E5-2620 v3 @ 2.40GHz
+cpu MHz		: 2753.759
+cpu MHz		: 2768.554
+cpu MHz		: 2736.767
+cpu MHz		: 2687.841
+cpu MHz		: 2735.888
+cpu MHz		: 2765.771
+cpu MHz		: 2736.621
+cpu MHz		: 2771.923
+cpu MHz		: 2656.933
+cpu MHz		: 2632.763
+cpu MHz		: 2633.789
+cpu MHz		: 2765.625
+cpu MHz		: 2801.513
+cpu MHz		: 2799.902
+cpu MHz		: 2748.339
+cpu MHz		: 2643.164
+cpu MHz		: 2699.414
+cpu MHz		: 2746.875
+cpu MHz		: 2748.486
+cpu MHz		: 2766.064
+cpu MHz		: 2643.164
+cpu MHz		: 2685.058
+cpu MHz		: 2627.490
+cpu MHz		: 2628.369
+@file(run.tcl) 8: puts "Hostname : [info hostname]"
+Hostname : ECE000.ece.local.cmu.edu
+@file(run.tcl) 15: set DESIGN comp_pulse_another_design
+@file(run.tcl) 16: set GEN_EFF medium
+@file(run.tcl) 17: set MAP_OPT_EFF high
+@file(run.tcl) 18: set DATE [clock format [clock seconds] -format "%b%d-%T"] 
+@file(run.tcl) 22: set _OUTPUTS_PATH outputs
+@file(run.tcl) 23: set _REPORTS_PATH reports
+@file(run.tcl) 24: set _LOG_PATH logs
+@file(run.tcl) 26: set_db / .init_lib_search_path {.}
+  Setting attribute of root '/': 'init_lib_search_path' = .
+@file(run.tcl) 27: set_db / .script_search_path {. ../src}
+  Setting attribute of root '/': 'script_search_path' = . ../src
+@file(run.tcl) 28: set_db / .init_hdl_search_path {. ../../rtl ../../rtl/comp_pulse ../../rtl/lfsr ../../rtl/comp_edge} 
+  Setting attribute of root '/': 'init_hdl_search_path' = . ../../rtl ../../rtl/comp_pulse ../../rtl/lfsr ../../rtl/comp_edge
+@file(run.tcl) 37: set_db / .information_level 7 
+  Setting attribute of root '/': 'information_level' = 7
+@file(run.tcl) 39: set_db auto_ungroup none
+  Setting attribute of root '/': 'auto_ungroup' = none
+@file(run.tcl) 46: read_libs " \
+    /afs/ece/class/ece725/gpdk045/libs/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib \
+    /afs/ece/class/ece725/gpdk045/libs/giolib045_v3.2/giolib045/lib/giolib045.lib \
+"
+
+Threads Configured:6
+Info    : Missing a function attribute in the output pin definition. [LBR-518]
+        : Functionality is missing at pin 'Y' for the cell 'HOLDX1'. (File /afs/ece/class/ece725/gpdk045/libs/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib, Line 67517)
+Warning : Missing voltage_map in the library. [LBR-704]
+        : The voltage_map attribute with name 'VDDIOR' referenced by the pg_pin 'VDDIOR' in the cell 'PADDI', is absent in the library. The required voltage_map group needs to be added. This pg_pin is ignored. Related low power constructs referencing this pg_pin may not be read correctly. (File /afs/ece/class/ece725/gpdk045/libs/giolib045_v3.2/giolib045/lib/giolib045.lib, Line 217)
+Warning : Missing voltage_map in the library. [LBR-704]
+        : The voltage_map attribute with name 'VSSIOR' referenced by the pg_pin 'VSSIOR' in the cell 'PADDI', is absent in the library. The required voltage_map group needs to be added. This pg_pin is ignored. Related low power constructs referencing this pg_pin may not be read correctly. (File /afs/ece/class/ece725/gpdk045/libs/giolib045_v3.2/giolib045/lib/giolib045.lib, Line 221)
+Warning : Missing voltage_map in the library. [LBR-704]
+        : The voltage_map attribute with name 'VDDIOR' referenced by the pg_pin 'VDDIOR' in the cell 'PADDO', is absent in the library. The required voltage_map group needs to be added. This pg_pin is ignored. Related low power constructs referencing this pg_pin may not be read correctly. (File /afs/ece/class/ece725/gpdk045/libs/giolib045_v3.2/giolib045/lib/giolib045.lib, Line 108)
+Warning : Missing voltage_map in the library. [LBR-704]
+        : The voltage_map attribute with name 'VSSIOR' referenced by the pg_pin 'VSSIOR' in the cell 'PADDO', is absent in the library. The required voltage_map group needs to be added. This pg_pin is ignored. Related low power constructs referencing this pg_pin may not be read correctly. (File /afs/ece/class/ece725/gpdk045/libs/giolib045_v3.2/giolib045/lib/giolib045.lib, Line 112)
+
+  Message Summary for Library both libraries:
+  *******************************************
+  Missing voltage_map in the library. [LBR-704]: 4
+  Could not find an attribute in the library. [LBR-436]: 576
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************
+ 
+            Reading file '/afs/ece/class/ece725/gpdk045/libs/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib'
+            Reading file '/afs/ece/class/ece725/gpdk045/libs/giolib045_v3.2/giolib045/lib/giolib045.lib'
+Warning : Libraries have inconsistent nominal operating conditions. [LBR-38]
+        : The libraries are 'slow_vdd1v0' and 'giolib045'.
+        : This is a common source of delay calculation confusion and is strongly discouraged.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basicCells.lib'.
+        : The nominal operating condition represents either the nominal PVT values if specified in the library source, or the default PVT values (1.0, 1.0, 1.0).
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.080000, 125.000000) in library 'giolib045.lib'.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Otherwise, the library cell will be marked as unusable and as timing model.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Info    : An output library pin lacks a function attribute. [LBR-41]
+        : Output pin 'HOLDX1/Y' has no function.
+        : If the remainder of this library cell's semantic checks are successful, it will be considered as a timing-model (because one of its outputs does not have a valid function.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+@file(run.tcl) 50: read_physical -lef " \
+    /afs/ece/class/ece725/gpdk045/libs/gsclib045_svt_v4.4/gsclib045/lef/gsclib045_tech.lef \
+    /afs/ece/class/ece725/gpdk045/libs/gsclib045_svt_v4.4/gsclib045/lef/gsclib045_macro.lef \
+    /afs/ece/class/ece725/gpdk045/libs/giolib045_v3.2/giolib045/lef/giolib045.lef \
+"
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_2x1_HV_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_2x1_HV_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_1x2_HV_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_1x2_HV_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_M_NH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_M_SH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_2x1_VH_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_2x1_VH_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_1x2_VH_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_1x2_VH_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_M_EV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_M_WV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_2x1_HV_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_2x1_HV_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_1x2_HV_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_1x2_HV_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_M_NH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_M_SH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_2x1_VH_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_2x1_VH_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_1x2_VH_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_1x2_VH_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_M_EV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_M_WV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_2x1_HV_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_2x1_HV_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_1x2_HV_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_1x2_HV_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_M_NH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_M_SH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_2x1_VH_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_2x1_VH_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_1x2_VH_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_1x2_VH_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_M_EV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_M_WV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_2x1_HV_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_2x1_HV_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_1x2_HV_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_1x2_HV_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_M_NH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_M_SH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_2x1_VH_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_2x1_VH_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_1x2_VH_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_1x2_VH_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M10_M9_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M10_M9_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M10_M9_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M10_M9_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M10_M9_2x1_HV_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M10_M9_2x1_HV_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M10_M9_1x2_HV_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M10_M9_1x2_HV_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_HH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_VV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_M_NH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_M_SH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_2x1_VH_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_2x1_VH_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_1x2_VH_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_1x2_VH_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_2x1_HH_E' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_2x1_HH_W' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_2x1_HH_C' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_1x2_VV_N' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_1x2_VV_S' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_1x2_VV_C' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M2_M1_2x2_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M3_M2_2x2_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M4_M3_2x2_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M5_M4_2x2_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M6_M5_2x2_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M7_M6_2x2_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M8_M7_2x2_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M9_M8_2x2_VH' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M10_M9_2x2_HV' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_VH_NEW' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_HH_NEW' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_HV_NEW' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_VV_NEW' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_M_NH_NEW' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_M_SH_NEW' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_1x2_VH_N_NEW' has no resistance value.
+Info    : Via with no resistance will have a value of '0.0' assigned. [PHYS-129]
+        : Via 'M11_M10_1x2_VH_S_NEW' has no resistance value.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'ExtVSS' on cell 'FSWNX1' without MUSTJOINALLPORTS in the pin property.
+        : This means that only one port would be connected, which may not be the expected behavior. Should consider adding MUSTJOINALLPORTS property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VDD' on cell 'FSWNX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'ExtVSS' on cell 'FSWX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VDD' on cell 'FSWX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'ExtVDD' on cell 'HSWDNX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'HSWDNX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'ExtVDD' on cell 'HSWDX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'HSWDX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'ExtVDD' on cell 'HSWNX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'HSWNX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'ExtVDD' on cell 'HSWX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'HSWX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'ISOHLDX1_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'ISOHX1_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'ISOLX1_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'ISONLX1_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSHL_ISOH_X1_FROM_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSHL_ISOL_X1_FROM_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSHL_ISONH_X1_FROM_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSHL_ISONL_X1_FROM_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSHLX1_FROM' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLH_ISOH_X1_FROM_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLH_ISOH_X1_TO_ON' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLH_ISOL_X1_FROM_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLH_ISOL_X1_TO_ON' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLH_ISONH_X1_FROM_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLH_ISONH_X1_TO_ON' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLH_ISONL_X1_FROM_OFF' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLH_ISONL_X1_TO_ON' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLHX1_FROM' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'LSLHX1_TO' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'PBUFX2' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'PINVX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFNQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFNRQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFNRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFNSQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFNSRQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFNSRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFNSX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFNX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFRQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFSQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFSRQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFSRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFSX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RDFFX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RTLATRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RTLATSRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'RTLATX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFNQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFNRQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFNRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFNSQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFNSRQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFNSRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFNSX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFNX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFRQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFSQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFSRQX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFSRX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFSX1' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'SRDFFX1' without MUSTJOINALLPORTS in the pin property.
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADANALOG' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADDB' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADDI' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADDO' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADDOZ' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADVDD' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADVDD25' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADVDDIOR' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADVSS' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADVSS25' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'PADVSSIOR' has non-zero origin (0, 80000).
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VDDIOR' on cell 'padIORINGCORNER' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VDD' on cell 'padIORINGCORNER' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSS' on cell 'padIORINGCORNER' without MUSTJOINALLPORTS in the pin property.
+Warning : Multiple ports are found on a pin without MUSTJOINALLPORTS in the pin property. [PHYS-2381]
+        : Multiple ports are found on pin 'VSSIOR' on cell 'padIORINGCORNER' without MUSTJOINALLPORTS in the pin property.
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'padIORINGCORNER' has non-zero origin (80000, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'padIORINGFEED1' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'padIORINGFEED10' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'padIORINGFEED3' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'padIORINGFEED5' has non-zero origin (0, 80000).
+Info    : Macro with non-zero origin. [PHYS-127]
+        : Macro 'padIORINGFEED60' has non-zero origin (0, 80000).
+
+  According to lef_library, there are total 11 routing layers [ V(5) / H(6) ]
+
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
+        : The 'timing_sense' attribute will be respected.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX1'.
+        : Setting the 'timing_sense' to non_unate.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX1'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX1' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'A' and 'S' in libcell 'ADDFHX1' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX1'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'CI' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX2'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX2' is 'pos_unate', but unateness determined from function is 'non_unate'.
+Info    : Mismatch in unateness between 'timing_sense' attribute and the function. [LBR-155]
+        : 'timing_sense' attribute between pin 'B' and 'S' in libcell 'ADDFHX2' is 'neg_unate', but unateness determined from function is 'non_unate'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX2'.
+Info    : Setting the maximum print count of this message to 10 if information_level is less than 9. [LBR-161]
+        : To print all the warning messages, set the information_level to 9.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHX4'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHX4'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHX4'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFHXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFHXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFHXL'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX1'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX1'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFX1'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'A' and 'S' in libcell 'ADDFX2'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'CI' and 'S' in libcell 'ADDFX4'.
+Info    : Both 'pos_unate' and 'neg_unate' timing_sense arcs have been processed. [LBR-162]
+        : Non_unate 'timing_sense' inferred between pin 'B' and 'S' in libcell 'ADDFX4'.
+  Libraries have 324 usable logic and 128 usable sequential lib-cells.
+@file(run.tcl) 58: read_qrc /afs/ece.cmu.edu/class/ece725/gpdk045/libs/gsclib045_svt_v4.4/gsclib045/qrc/qx/gpdk045.tch
+
+  According to qrc_tech_file, there are total 11 routing layers [ V(5) / H(6) ]
+
+Done reading qrc_tech_file
+@file(run.tcl) 63: set_db / .hdl_generate_index_style %s_%d_
+  Setting attribute of root '/': 'hdl_generate_index_style' = %s_%d_
+@file(run.tcl) 65: set_db / .lp_insert_clock_gating true 
+  Setting attribute of root '/': 'lp_insert_clock_gating' = true
+@file(run.tcl) 72: read_hdl -language sv "lfsr.sv lfsr_behavioral.sv prob_gen.sv comp_pulse.sv comp_output_sel.sv comp_pulse_another_design.sv register.sv comp_edge.sv comp_pulse_edge.sv comp_edge_resolve.sv edge_sel.sv"
+            Reading Verilog file '../../rtl/lfsr/lfsr.sv'
+            Reading Verilog file '../../rtl/lfsr/lfsr_behavioral.sv'
+            Reading Verilog file '../../rtl/lfsr/prob_gen.sv'
+            Reading Verilog file '../../rtl/comp_pulse/comp_pulse.sv'
+            Reading Verilog file '../../rtl/comp_output_sel.sv'
+            Reading Verilog file '../../rtl/comp_pulse/comp_pulse_another_design.sv'
+            Reading Verilog file '../../rtl/register.sv'
+            Reading Verilog file '../../rtl/comp_edge/comp_edge.sv'
+            Reading Verilog file '../../rtl/comp_pulse/comp_pulse_edge.sv'
+            Reading Verilog file '../../rtl/comp_edge/comp_edge_resolve.sv'
+            Reading Verilog file '../../rtl/comp_edge/edge_sel.sv'
+@file(run.tcl) 73: elaborate $DESIGN
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'comp_pulse_another_design' from file '../../rtl/comp_pulse/comp_pulse_another_design.sv'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'comp_pulse_edge' from file '../../rtl/comp_pulse/comp_pulse_edge.sv'.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'x_edge' [1] doesn't match the width of right hand side [32] in assignment in file '../../rtl/comp_pulse/comp_pulse_edge.sv' on line 16.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'y_edge' [1] doesn't match the width of right hand side [32] in assignment in file '../../rtl/comp_pulse/comp_pulse_edge.sv' on line 23.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'comp_edge' from file '../../rtl/comp_edge/comp_edge.sv'.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'comp_edge_resolve' from file '../../rtl/comp_edge/comp_edge_resolve.sv'.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'to_sel_mux[...]' [1] doesn't match the width of right hand side [32] in assignment in file '../../rtl/comp_edge/comp_edge_resolve.sv' on line 18.
+Info    : Elaborating Subdesign. [ELAB-2]
+        : Elaborating block 'edge_sel' from file '../../rtl/comp_edge/edge_sel.sv'.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'prob' [7] doesn't match the width of right hand side [32] in assignment in file '../../rtl/comp_edge/edge_sel.sv' on line 11.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'inc' [1] doesn't match the width of right hand side [32] in assignment in file '../../rtl/comp_edge/edge_sel.sv' on line 12.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'inc' [1] doesn't match the width of right hand side [32] in assignment in file '../../rtl/comp_edge/edge_sel.sv' on line 16.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'inc' [1] doesn't match the width of right hand side [32] in assignment in file '../../rtl/comp_edge/edge_sel.sv' on line 20.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'inc' [1] doesn't match the width of right hand side [32] in assignment in file '../../rtl/comp_edge/edge_sel.sv' on line 24.
+Info    : Bitwidth mismatch in assignment. [CDFG-372]
+        : Width of left hand side 'inc' [1] doesn't match the width of right hand side [32] in assignment in file '../../rtl/comp_edge/edge_sel.sv' on line 28.
+Warning : Generated logic differs from the expected logic. [CDFG2G-615]
+        : Signal 'prob' in module 'edge_sel' modeled as latch instead of wire in file '../../rtl/comp_edge/edge_sel.sv' on line 8, column 25.
+        : The logic generated for an always_comb, always_latch or always_ff process may not match the behavior specified in the input HDL.
+Warning : Generated logic differs from the expected logic. [CDFG2G-615]
+        : Signal 'inc' in module 'edge_sel' modeled as latch instead of wire in file '../../rtl/comp_edge/edge_sel.sv' on line 8, column 1.
+Info    : Latch inferred.  [CDFG2G-616]
+        : Latch inferred for variable 'prob' in file '../../rtl/comp_edge/edge_sel.sv' on line 8, column 25.
+        : Use 'set_attribute hdl_error_on_latch true' to issue an error when a latch is inferred. Use 'set_attribute hdl_latch_keep_feedback true' to infer combinational logic rather than a latch when a variable is explicitly assigned to itself.
+Info    : Latch inferred.  [CDFG2G-616]
+        : Latch inferred for variable 'inc' in file '../../rtl/comp_edge/edge_sel.sv' on line 8, column 1.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'comp_pulse_another_design'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+        Computing net loads.
+UM:  flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:             9             36                                      elaborate
+@file(run.tcl) 74: puts "Runtime & Memory after 'read_hdl'"
+Runtime & Memory after 'read_hdl'
+@file(run.tcl) 75: time_info Elaboration
+stamp 'Elaboration' being created for table 'default'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:04(00:00:00) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:06:41 (Apr27) |  150.1 MB | init
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:22) |  00:00:05(00:00:22) | 100.0(100.0) |   16:07:03 (Apr27) |  271.4 MB | Elaboration
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: default, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+@file(run.tcl) 79: check_design -unresolved
+  Checking the design.
+
+ 	 Check Design Report
+	 -------------------- 
+
+  Unresolved References & Empty Modules
+  ------------------------------------- 
+No unresolved references in design 'comp_pulse_another_design'
+
+No empty modules in design 'comp_pulse_another_design'
+
+  Done Checking the design.
+@file(run.tcl) 85: read_sdc chip.sdc
+Warning : Could not find requested search value. [SDC-208] [get_ports]
+        : The 'get_ports' command on line '1' of the SDC file 'chip.sdc'  cannot find any ports named 'clk'
+        : Use the 'vcd' and 'vls' commands to browse the virtual directories to find the object because the specified name and/or location does not exist.
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'port|pin|hpin' named '' could not be found.
+        : Check to make sure that the object exists and is of the correct type.  The 'what_is' command can be used to determine the type of an object.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '1' of the SDC file 'chip.sdc': create_clock [get_ports clk]  -period 10  -waveform {0 5} -name clk.
+        : The 'read_sdc' command encountered a problem while trying to evaluate an SDC command. This SDC command will be added to the Tcl variable $::dc::sdc_failed_commands.
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '3' of the SDC file 'chip.sdc'  cannot find any clocks named 'clk'
+Error   : Option missing for SDC command. [SDC-203] [set_clock_uncertainty]
+        : The 'set_clock_uncertainty' command on line '3' of the SDC file 'chip.sdc' requires '-from', '-to', '-rise_from', '-fall_from', '-rise_to', '-fall_to', or list of objects option.
+        : This SDC command requires the indicated options.  Check the SDC command and contact Cadence customer support if you believe this option combination should be supported.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '3' of the SDC file 'chip.sdc': set_clock_uncertainty 0.1  [get_clocks clk].
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '4' of the SDC file 'chip.sdc'  cannot find any clocks named 'clk'
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '4' of the SDC file 'chip.sdc': set_clock_transition -fall 0.15 [get_clocks clk].
+Warning : Could not find requested search value. [SDC-208] [get_clocks]
+        : The 'get_clocks' command on line '5' of the SDC file 'chip.sdc'  cannot find any clocks named 'clk'
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named '' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '5' of the SDC file 'chip.sdc': set_clock_transition -rise 0.15 [get_clocks clk].
+Error   : A required object parameter could not be found. [TUI-61] [remove_from_collection]
+        : An object named 'clk' could not be found.
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named 'clk' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '7' of the SDC file 'chip.sdc': set_input_delay 2 -clock clk [remove_from_collection [all_inputs] clk].
+Error   : A required object parameter could not be found. [TUI-61] [parse_options]
+        : An object of type 'clock' named 'clk' could not be found.
+Error   : Could not interpret SDC command. [SDC-202] [read_sdc]
+        : The 'read_sdc' command encountered an error while processing this command on line '8' of the SDC file 'chip.sdc': set_output_delay 2 -clock clk  [all_outputs].
+            Reading file '/afs/ece.cmu.edu/usr/sbhasuth/gcd_gpdk/syn_another_design/WORK/../src/chip.sdc'
+Statistics for commands executed by read_sdc:
+ "all_inputs"               - successful      1 , failed      0 (runtime  0.00)
+ "all_outputs"              - successful      1 , failed      0 (runtime  0.00)
+ "create_clock"             - successful      0 , failed      1 (runtime  0.00)
+ "get_clocks"               - successful      0 , failed      3 (runtime  0.00)
+ "get_ports"                - successful      0 , failed      1 (runtime  0.00)
+ "remove_from_collection"   - successful      0 , failed      1 (runtime  0.00)
+ "set_clock_transition"     - successful      0 , failed      2 (runtime  0.00)
+ "set_clock_uncertainty"    - successful      0 , failed      1 (runtime  0.00)
+ "set_input_delay"          - successful      0 , failed      1 (runtime  0.00)
+ "set_output_delay"         - successful      0 , failed      1 (runtime  0.00)
+Warning : Total failed commands during read_sdc are 11
+Warning : One or more commands failed when these constraints were applied. [SDC-209]
+        : The 'read_sdc' command encountered a problem while processing commands.
+        : You can examine the failed commands or save them to a file by querying the Tcl variable $::dc::sdc_failed_commands.
+Total runtime 0.0
+@file(run.tcl) 86: puts "The number of exceptions is [llength [vfind "design:$DESIGN" -exception *]]"
+The number of exceptions is 0
+@file(run.tcl) 91: if {![file exists ${_LOG_PATH}]} {
+  file mkdir ${_LOG_PATH}
+  puts "Creating directory ${_LOG_PATH}"
+}
+@file(run.tcl) 96: if {![file exists ${_OUTPUTS_PATH}]} {
+  file mkdir ${_OUTPUTS_PATH}
+  puts "Creating directory ${_OUTPUTS_PATH}"
+}
+@file(run.tcl) 101: if {![file exists ${_REPORTS_PATH}]} {
+  file mkdir ${_REPORTS_PATH}
+  puts "Creating directory ${_REPORTS_PATH}"
+}
+@file(run.tcl) 105: check_timing_intent
+        Computing net loads.
+        Tracing clock networks.
+        Levelizing the circuit.
+        Computing delays.
+        Computing arrivals and requireds.
+============================================================
+  Generated by:           Genus(TM) Synthesis Solution 18.14-s037_1
+  Generated on:           Apr 27 2020  04:07:04 pm
+  Module:                 comp_pulse_another_design
+  Technology libraries:   slow_vdd1v0 1.0
+                          giolib045 1.0
+                          physical_cells 
+  Operating conditions:   PVT_0P9V_125C 
+  Interconnect mode:      global
+  Area mode:              physical library
+============================================================
+
+-------------------------------------------------------------------------------
+Sequential clock pins without clock waveform
+
+The following sequential clock pins have no clock waveform driving them.  No    
+timing constraints will be derived for paths leading to or from these pins.     
+
+pin:comp_pulse_another_design/comp_edge_inst/comp_edge_resolve_inst/to_sel_mux_reg[0]/clk
+pin:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/inc_reg/ena
+pin:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/prob_reg[0]/ena
+  ... 8 other warnings in this category.
+ Use the -verbose option for more details.
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Inputs without clocked external delays
+
+The following primary inputs have no clocked external delays.  As a result the  
+timing paths leading from the ports have no timing constraints derived from     
+clock waveforms.  The'external_delay' command is used to create new external    
+delays.                                                                         
+
+port:comp_pulse_another_design/rst_b
+port:comp_pulse_another_design/u_backoff[0]
+port:comp_pulse_another_design/u_backoff[1]
+  ... 28 other warnings in this category.
+ Use the -verbose option for more details.
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Outputs without clocked external delays
+
+The following primary outputs have no clocked external delays.  As a result the 
+timing paths leading to the ports have no timing constraints derived from clock 
+waveforms.  The'external_delay' command is used to create new external delays.  
+
+port:comp_pulse_another_design/inc
+port:comp_pulse_another_design/prob[0]
+port:comp_pulse_another_design/prob[1]
+  ... 5 other warnings in this category.
+ Use the -verbose option for more details.
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Inputs without external driver/transition
+
+The following primary inputs have no external driver or input transition set.   
+As a result the transition on the ports will be assumed as zero. The            
+'external_driver' attribute is used to add and external driver or the           
+'fixed_slew' attribute to add an external transition.                           
+
+port:comp_pulse_another_design/rst_b
+port:comp_pulse_another_design/u_backoff[0]
+port:comp_pulse_another_design/u_backoff[1]
+  ... 28 other warnings in this category.
+ Use the -verbose option for more details.
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Outputs without external load
+
+The following primary outputs have no external load set. As a result the load   
+on the ports will be assumed as zero. The 'external_pin_cap' attribute is used  
+to add and external pin cap.                                                    
+
+port:comp_pulse_another_design/inc
+port:comp_pulse_another_design/prob[0]
+port:comp_pulse_another_design/prob[1]
+  ... 5 other warnings in this category.
+ Use the -verbose option for more details.
+-------------------------------------------------------------------------------
+
+
+Lint summary
+ Unconnected/logic driven clocks                                  0
+ Sequential data pins driven by a clock signal                    0
+ Sequential clock pins without clock waveform                    11
+ Sequential clock pins with multiple clock waveforms              0
+ Generated clocks without clock waveform                          0
+ Generated clocks with incompatible options                       0
+ Generated clocks with multi-master clock                         0
+ Paths constrained with different clocks                          0
+ Loop-breaking cells for combinational feedback                   0
+ Nets with multiple drivers                                       0
+ Timing exceptions with no effect                                 0
+ Suspicious multi_cycle exceptions                                0
+ Pins/ports with conflicting case constants                       0
+ Inputs without clocked external delays                          31
+ Outputs without clocked external delays                          8
+ Inputs without external driver/transition                       31
+ Outputs without external load                                    8
+ Exceptions with invalid timing start-/endpoints                  0
+
+                                                  Total:         89
+
+@file(run.tcl) 115: if {[llength [all_registers]] > 0} { 
+  define_cost_group -name I2C -design $DESIGN
+  define_cost_group -name C2O -design $DESIGN
+  define_cost_group -name C2C -design $DESIGN
+  path_group -from [all_registers] -to [all_registers] -group C2C -name C2C
+  path_group -from [all_registers] -to [all_outputs] -group C2O -name C2O
+  path_group -from [all_inputs]  -to [all_registers] -group I2C -name I2C
+}
+inst:comp_pulse_another_design/comp_pulse_edge_inst/x_edge_reg inst:comp_pulse_another_design/comp_pulse_edge_inst/y_edge_reg inst:comp_pulse_another_design/comp_edge_inst/comp_edge_resolve_inst/to_sel_mux_reg[0] inst:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/prob_reg[0] inst:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/prob_reg[1] inst:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/prob_reg[2] inst:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/prob_reg[3] inst:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/prob_reg[4] inst:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/prob_reg[5] inst:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/prob_reg[6] inst:comp_pulse_another_design/comp_edge_inst/edge_sel_inst/inc_reg 
+@file(run.tcl) 124: define_cost_group -name I2O -design $DESIGN
+@file(run.tcl) 125: path_group -from [all_inputs]  -to [all_outputs] -group I2O -name I2O
+@file(run.tcl) 126: foreach cg [vfind / -cost_group *] {
+  report_timing -group [list $cg] >> $_REPORTS_PATH/${DESIGN}_pretim.rpt
+}
+        Computing arrivals and requireds.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+        : Use 'report timing -lint' for more information.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+@file(run.tcl) 143: set_db / .syn_generic_effort $GEN_EFF
+  Setting attribute of root '/': 'syn_generic_effort' = medium
+@file(run.tcl) 144: syn_generic
+Info    : Deleting instances not driving any primary outputs. [GLO-34]
+        : Deleting 3 hierarchical instances. 
+Following instances are deleted as they do not drive any primary output:
+'comp_edge_inst/comp_edge_resolve_inst/mux_to_sel_mux_17_9', 
+'comp_pulse_edge_inst/mux_x_edge_15_9', 
+'comp_pulse_edge_inst/mux_y_edge_22_9'.
+        : Optimizations such as constant propagation or redundancy removal could change the connections so a hierarchical instance does not drive any primary outputs anymore. To see the list of deleted hierarchical instances, set the 'information_level' attribute to 2 or above. If the message is truncated set the message attribute 'truncate' to false to see the complete list. To prevent this optimization, set the 'delete_unloaded_insts' root/subdesign attribute to 'false' or 'preserve' instance attribute to 'true'.
+Current PLE settings:
+
+Aspect ratio        : 1.00
+Shrink factor       : 1.00
+Scale of res/length : 1.00
+Scale of cap/length : 1.00
+Net derating factor : 1.00
+Thermal factor      : 1.00
+Via Resistance      : 6.60 ohm (from qrc_tech_file)
+Site size           : 1.91 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       qrc_tech_file
+------------------------------------------------
+METAL_1         H         0.00        0.000210  
+METAL_2         V         1.00        0.000174  
+METAL_3         H         1.00        0.000174  
+METAL_4         V         1.00        0.000174  
+METAL_5         H         1.00        0.000174  
+METAL_6         V         1.00        0.000174  
+METAL_7         H         1.00        0.000175  
+METAL_8         V         1.00        0.000176  
+METAL_9         H         1.00        0.001240  
+METAL_10        V         1.00        0.000529  
+METAL_11        H         1.00        0.000686  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       qrc_tech_file
+-------------------------------------------------
+METAL_1         H         0.00         1.226667  
+METAL_2         V         1.00         0.755000  
+METAL_3         H         1.00         0.755000  
+METAL_4         V         1.00         0.755000  
+METAL_5         H         1.00         0.755000  
+METAL_6         V         1.00         0.755000  
+METAL_7         H         1.00         0.755000  
+METAL_8         V         1.00         0.267500  
+METAL_9         H         1.00         0.267500  
+METAL_10        V         1.00         0.097273  
+METAL_11        H         1.00         0.095455  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+Metal1          H         0.00         0.060000  
+Metal2          V         1.00         0.080000  
+Metal3          H         1.00         0.080000  
+Metal4          V         1.00         0.080000  
+Metal5          H         1.00         0.080000  
+Metal6          V         1.00         0.080000  
+Metal7          H         1.00         0.080000  
+Metal8          V         1.00         0.080000  
+Metal9          H         1.00         0.080000  
+Metal10         V         1.00         0.220000  
+Metal11         H         1.00         0.220000  
+
+Info    : Synthesizing. [SYNTH-1]
+        : Synthesizing 'comp_pulse_another_design' to generic gates using 'medium' effort.
+  Setting attribute of design 'comp_pulse_another_design': 'is_excp_dupcln' = false
+PBS_Generic-Start - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_Generic-Start' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+        Computing net loads.
+Info    : Partition Based Synthesis execution skipped. [PHYS-752]
+        : Design size is less than the partition size '100000' for distributed generic optimization to kick in.
+Current PLE settings:
+
+Aspect ratio        : 1.00
+Shrink factor       : 1.00
+Scale of res/length : 1.00
+Scale of cap/length : 1.00
+Net derating factor : 1.00
+Thermal factor      : 1.00
+Via Resistance      : 6.60 ohm (from qrc_tech_file)
+Site size           : 1.91 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       qrc_tech_file
+------------------------------------------------
+METAL_1         H         0.00        0.000210  
+METAL_2         V         1.00        0.000174  
+METAL_3         H         1.00        0.000174  
+METAL_4         V         1.00        0.000174  
+METAL_5         H         1.00        0.000174  
+METAL_6         V         1.00        0.000174  
+METAL_7         H         1.00        0.000175  
+METAL_8         V         1.00        0.000176  
+METAL_9         H         1.00        0.001240  
+METAL_10        V         1.00        0.000529  
+METAL_11        H         1.00        0.000686  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       qrc_tech_file
+-------------------------------------------------
+METAL_1         H         0.00         1.226667  
+METAL_2         V         1.00         0.755000  
+METAL_3         H         1.00         0.755000  
+METAL_4         V         1.00         0.755000  
+METAL_5         H         1.00         0.755000  
+METAL_6         V         1.00         0.755000  
+METAL_7         H         1.00         0.755000  
+METAL_8         V         1.00         0.267500  
+METAL_9         H         1.00         0.267500  
+METAL_10        V         1.00         0.097273  
+METAL_11        H         1.00         0.095455  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+Metal1          H         0.00         0.060000  
+Metal2          V         1.00         0.080000  
+Metal3          H         1.00         0.080000  
+Metal4          V         1.00         0.080000  
+Metal5          H         1.00         0.080000  
+Metal6          V         1.00         0.080000  
+Metal7          H         1.00         0.080000  
+Metal8          V         1.00         0.080000  
+Metal9          H         1.00         0.080000  
+Metal10         V         1.00         0.220000  
+Metal11         H         1.00         0.220000  
+
+Info    : Pre-processed datapath logic. [DPOPT-6]
+        : No pre-processing optimizations applied to datapath logic in 'comp_pulse_another_design'.
+Info    : Skipping datapath optimization. [DPOPT-5]
+        : There is no datapath logic in 'comp_pulse_another_design'.
+      Removing temporary intermediate hierarchies under comp_pulse_another_design
+              Optimizing muxes in design 'edge_sel'.
+Current PLE settings:
+
+Aspect ratio        : 1.00
+Shrink factor       : 1.00
+Scale of res/length : 1.00
+Scale of cap/length : 1.00
+Net derating factor : 1.00
+Thermal factor      : 1.00
+Via Resistance      : 6.60 ohm (from qrc_tech_file)
+Site size           : 1.91 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       qrc_tech_file
+------------------------------------------------
+METAL_1         H         0.00        0.000210  
+METAL_2         V         1.00        0.000174  
+METAL_3         H         1.00        0.000174  
+METAL_4         V         1.00        0.000174  
+METAL_5         H         1.00        0.000174  
+METAL_6         V         1.00        0.000174  
+METAL_7         H         1.00        0.000175  
+METAL_8         V         1.00        0.000176  
+METAL_9         H         1.00        0.001240  
+METAL_10        V         1.00        0.000529  
+METAL_11        H         1.00        0.000686  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       qrc_tech_file
+-------------------------------------------------
+METAL_1         H         0.00         1.226667  
+METAL_2         V         1.00         0.755000  
+METAL_3         H         1.00         0.755000  
+METAL_4         V         1.00         0.755000  
+METAL_5         H         1.00         0.755000  
+METAL_6         V         1.00         0.755000  
+METAL_7         H         1.00         0.755000  
+METAL_8         V         1.00         0.267500  
+METAL_9         H         1.00         0.267500  
+METAL_10        V         1.00         0.097273  
+METAL_11        H         1.00         0.095455  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+Metal1          H         0.00         0.060000  
+Metal2          V         1.00         0.080000  
+Metal3          H         1.00         0.080000  
+Metal4          V         1.00         0.080000  
+Metal5          H         1.00         0.080000  
+Metal6          V         1.00         0.080000  
+Metal7          H         1.00         0.080000  
+Metal8          V         1.00         0.080000  
+Metal9          H         1.00         0.080000  
+Metal10         V         1.00         0.220000  
+Metal11         H         1.00         0.220000  
+
+Mapper: Libraries have:
+	domain _default_: 324 combo usable cells and 128 sequential usable cells
+      Mapping 'comp_pulse_another_design'...
+        Preparing the circuit
+          Pruning unused logic
+Multi-threaded constant propagation [1|0] ...
+Inserting clock-gating logic .....
+Clock Gating Status
+===================
+Category                                Number    Percentage
+------------------------------------------------------------------
+Gated flip-flops                        0		  0%
+Ungated flip-flops
+  Cannot map to requested logic         0		  0%
+  Enable signal is constant             0		  0%
+  Excluded from clock-gating            0		  0%
+  User preserved                        0		  0%
+  Libcell unusable                      0		  0%
+  Timing exception in enable logic      0		  0%
+  Register bank width too small         3		100%
+Total flip-flops                        3		100%
+Total CG Modules                        0
+    Automatically cost grouped 0 clock gate paths.
+          Analyzing hierarchical boundaries
+          Aggressive hierarchical optimization: disabled
+          Propagating constants
+        Done preparing the circuit
+          Structuring (delay-based) comp_pulse_another_design...
+          Done structuring (delay-based) comp_pulse_another_design
+Multi-threaded Virtual Mapping    (8 threads, 8 of 24 CPUs usable)
+          Structuring (delay-based) comp_pulse_edge...
+          Done structuring (delay-based) comp_pulse_edge
+        Mapping component comp_pulse_edge...
+          Structuring (delay-based) comp_edge_resolve...
+          Done structuring (delay-based) comp_edge_resolve
+        Mapping component comp_edge_resolve...
+          Structuring (delay-based) edge_sel...
+            Starting partial collapsing  edge_sel
+            Finished partial collapsing.
+            Starting redundancy-removal...
+            Finished redundancy-removal...
+          Done structuring (delay-based) edge_sel
+        Mapping component edge_sel...
+ 
+Global mapping target info
+==========================
+Cost Group 'default' target slack: Unconstrained
+
+PBS_Generic_Opt-Post - Elapsed_Time 1, CPU_Time 0.9587710000000005
+stamp 'PBS_Generic_Opt-Post' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) | 100.0(100.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+        Computing net loads.
+PBS_Generic-Postgen HBO Optimizations - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_Generic-Postgen HBO Optimizations' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) | 100.0(100.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+##>=================== Cadence Confidential (Generic-Logical) ===================
+##>Main Thread Summary:
+##>----------------------------------------------------------------------------------------
+##>STEP                           Elapsed       WNS       TNS     Insts      Area    Memory
+##>----------------------------------------------------------------------------------------
+##>G:Initial                            0         -         -        36       277       271
+##>G:Setup                              0         -         -         -         -         -
+##>G:Launch ST                          0         -         -         -         -         -
+##>G:Design Partition                   0         -         -         -         -         -
+##>G:Create Partition Netlists          0         -         -         -         -         -
+##>G:Init Power                         0         -         -         -         -         -
+##>G:Budgeting                          0         -         -         -         -         -
+##>G:Derenv-DB                          0         -         -         -         -         -
+##>G:Debug Outputs                      0         -         -         -         -         -
+##>G:ST loading                         0         -         -         -         -         -
+##>G:Distributed                        0         -         -         -         -         -
+##>G:Timer                              0         -         -         -         -         -
+##>G:Assembly                           0         -         -         -         -         -
+##>G:DFT                                0         -         -         -         -         -
+##>G:Const Prop                         0         -         -        68       220       271
+##>G:Misc                               1
+##>----------------------------------------------------------------------------------------
+##>Total Elapsed                        1
+##>========================================================================================
+
+======================= Sequential Deletion Report =============================
+================================================================================
+
+Info    : Done synthesizing. [SYNTH-2]
+        : Done synthesizing 'comp_pulse_another_design' to generic gates.
+        Computing net loads.
+     flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:             1              2                                      syn_generic
+@file(run.tcl) 145: puts "Runtime & Memory after 'syn_generic'"
+Runtime & Memory after 'syn_generic'
+@file(run.tcl) 146: time_info GENERIC
+stamp 'GENERIC' being created for table 'default'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:04(00:00:00) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:06:41 (Apr27) |  150.1 MB | init
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:22) |  00:00:05(00:00:22) |  83.9( 91.7) |   16:07:03 (Apr27) |  271.4 MB | Elaboration
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:02) |  16.1(  8.3) |   16:07:05 (Apr27) |  271.4 MB | GENERIC
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: default, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+@file(run.tcl) 147: report_dp > $_REPORTS_PATH/generic/${DESIGN}_datapath.rpt
+Beginning report datapath command
+Warning : The filename, column and line number information will not be available in the report. [RPT_DP-100]
+        : The attribute for getting HDL filename and line number is not set.
+        : You must set the 'hdl_track_filename_row_col' attribute to 'true' (before elaborate) to enable filename, column, and line number tracking in the datapath report.
+        Computing net loads.
+@file(run.tcl) 148: write_snapshot -outdir $_REPORTS_PATH -tag generic
+
+
+Working Directory = /afs/ece.cmu.edu/usr/sbhasuth/gcd_gpdk/syn_another_design/WORK
+QoS Summary for comp_pulse_another_design
+================================================================================
+Metric                          generic        
+================================================================================
+Slack (ps):                       inf
+  R2R (ps):                  no_value
+  I2R (ps):                  no_value
+  R2O (ps):                  no_value
+  I2O (ps):                  no_value
+  CG  (ps):                  no_value
+TNS (ps):                           0
+  R2R (ps):                  no_value
+  I2R (ps):                  no_value
+  R2O (ps):                  no_value
+  I2O (ps):                  no_value
+  CG  (ps):                  no_value
+Failing Paths:                      0
+Cell Area:                        226
+Total Cell Area:                  226
+Leaf Instances:                    68
+Total Instances:                   68
+Utilization (%):                 0.00
+Tot. Net Length (um):        no_value
+Avg. Net Length (um):        no_value
+Route Overflow H (%):        no_value
+Route Overflow V (%):        no_value
+MBCI(%) (bits/gate) :            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value
+  Tot Cong:                  no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:00:06
+Real Runtime (h:m:s):        00:00:24
+CPU  Elapsed (h:m:s):        00:00:10
+Real Elapsed (h:m:s):        00:00:25
+Memory (MB):                   761.71
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:00:24
+Total Memory (MB):     761.71
+Executable Version:    18.14-s037_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
+
+
+Warning : The details given in report might be incorrect or incomplete. [RPT-80]
+        : The design design:comp_pulse_another_design should be mapped to get accurate area details.
+        : Map the design using syn_map before using the '-detail' option of the 'report_area' command.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Did not find power models for RTL power analysis. [PA-17]
+        : Design design:comp_pulse_another_design has no power models available.
+        : The RTL power analysis results are more accurate when detailed power models are used. Use command 'build_rtl_power_models' to build detailed power models.
+Warning : No clock. [RPT-10]
+        : There are no clocks in the design.
+        : Clock is not defined.
+Finished exporting design database to file 'reports/generic_comp_pulse_another_design.db' for 'comp_pulse_another_design' (command execution time mm:ss cpu = 00:00, real = 00:00).
+Finished generating snapshot at stage generic (command execution time mm:ss cpu = 00:00, real = 00:00).
+@file(run.tcl) 149: report_summary -directory $_REPORTS_PATH
+
+
+Working Directory = /afs/ece.cmu.edu/usr/sbhasuth/gcd_gpdk/syn_another_design/WORK
+QoS Summary for comp_pulse_another_design
+================================================================================
+Metric                          generic        
+================================================================================
+Slack (ps):                       inf
+  R2R (ps):                  no_value
+  I2R (ps):                  no_value
+  R2O (ps):                  no_value
+  I2O (ps):                  no_value
+  CG  (ps):                  no_value
+TNS (ps):                           0
+  R2R (ps):                  no_value
+  I2R (ps):                  no_value
+  R2O (ps):                  no_value
+  I2O (ps):                  no_value
+  CG  (ps):                  no_value
+Failing Paths:                      0
+Cell Area:                        226
+Total Cell Area:                  226
+Leaf Instances:                    68
+Total Instances:                   68
+Utilization (%):                 0.00
+Tot. Net Length (um):        no_value
+Avg. Net Length (um):        no_value
+Route Overflow H (%):        no_value
+Route Overflow V (%):        no_value
+MBCI(%) (bits/gate) :            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value
+  Tot Cong:                  no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:00:06
+Real Runtime (h:m:s):        00:00:24
+CPU  Elapsed (h:m:s):        00:00:10
+Real Elapsed (h:m:s):        00:00:25
+Memory (MB):                   761.71
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:00:24
+Total Memory (MB):     761.71
+Executable Version:    18.14-s037_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
+
+
+@file(run.tcl) 160: set_db / .syn_map_effort $MAP_OPT_EFF
+  Setting attribute of root '/': 'syn_map_effort' = high
+@file(run.tcl) 161: syn_map
+Current PLE settings:
+
+Aspect ratio        : 1.00
+Shrink factor       : 1.00
+Scale of res/length : 1.00
+Scale of cap/length : 1.00
+Net derating factor : 1.00
+Thermal factor      : 1.00
+Via Resistance      : 6.60 ohm (from qrc_tech_file)
+Site size           : 1.91 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       qrc_tech_file
+------------------------------------------------
+METAL_1         H         0.00        0.000210  
+METAL_2         V         1.00        0.000174  
+METAL_3         H         1.00        0.000174  
+METAL_4         V         1.00        0.000174  
+METAL_5         H         1.00        0.000174  
+METAL_6         V         1.00        0.000174  
+METAL_7         H         1.00        0.000175  
+METAL_8         V         1.00        0.000176  
+METAL_9         H         1.00        0.001240  
+METAL_10        V         1.00        0.000529  
+METAL_11        H         1.00        0.000686  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       qrc_tech_file
+-------------------------------------------------
+METAL_1         H         0.00         1.226667  
+METAL_2         V         1.00         0.755000  
+METAL_3         H         1.00         0.755000  
+METAL_4         V         1.00         0.755000  
+METAL_5         H         1.00         0.755000  
+METAL_6         V         1.00         0.755000  
+METAL_7         H         1.00         0.755000  
+METAL_8         V         1.00         0.267500  
+METAL_9         H         1.00         0.267500  
+METAL_10        V         1.00         0.097273  
+METAL_11        H         1.00         0.095455  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+Metal1          H         0.00         0.060000  
+Metal2          V         1.00         0.080000  
+Metal3          H         1.00         0.080000  
+Metal4          V         1.00         0.080000  
+Metal5          H         1.00         0.080000  
+Metal6          V         1.00         0.080000  
+Metal7          H         1.00         0.080000  
+Metal8          V         1.00         0.080000  
+Metal9          H         1.00         0.080000  
+Metal10         V         1.00         0.220000  
+Metal11         H         1.00         0.220000  
+
+Info    : Mapping. [SYNTH-4]
+        : Mapping 'comp_pulse_another_design' using 'high' effort.
+Mapper: Libraries have:
+	domain _default_: 324 combo usable cells and 128 sequential usable cells
+PBS_TechMap-Start - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_TechMap-Start' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) | 100.0(100.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+        Computing net loads.
+PBS_TechMap-Premap HBO Optimizations - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_TechMap-Premap HBO Optimizations' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) | 100.0(100.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Premap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+Info    : Partition Based Synthesis execution skipped. [PHYS-752]
+        : Design size is less than the partition size '100000' for distributed mapping optimization to kick in.
+Current PLE settings:
+
+Aspect ratio        : 1.00
+Shrink factor       : 1.00
+Scale of res/length : 1.00
+Scale of cap/length : 1.00
+Net derating factor : 1.00
+Thermal factor      : 1.00
+Via Resistance      : 6.60 ohm (from qrc_tech_file)
+Site size           : 1.91 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       qrc_tech_file
+------------------------------------------------
+METAL_1         H         0.00        0.000210  
+METAL_2         V         1.00        0.000174  
+METAL_3         H         1.00        0.000174  
+METAL_4         V         1.00        0.000174  
+METAL_5         H         1.00        0.000174  
+METAL_6         V         1.00        0.000174  
+METAL_7         H         1.00        0.000175  
+METAL_8         V         1.00        0.000176  
+METAL_9         H         1.00        0.001240  
+METAL_10        V         1.00        0.000529  
+METAL_11        H         1.00        0.000686  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       qrc_tech_file
+-------------------------------------------------
+METAL_1         H         0.00         1.226667  
+METAL_2         V         1.00         0.755000  
+METAL_3         H         1.00         0.755000  
+METAL_4         V         1.00         0.755000  
+METAL_5         H         1.00         0.755000  
+METAL_6         V         1.00         0.755000  
+METAL_7         H         1.00         0.755000  
+METAL_8         V         1.00         0.267500  
+METAL_9         H         1.00         0.267500  
+METAL_10        V         1.00         0.097273  
+METAL_11        H         1.00         0.095455  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+Metal1          H         0.00         0.060000  
+Metal2          V         1.00         0.080000  
+Metal3          H         1.00         0.080000  
+Metal4          V         1.00         0.080000  
+Metal5          H         1.00         0.080000  
+Metal6          V         1.00         0.080000  
+Metal7          H         1.00         0.080000  
+Metal8          V         1.00         0.080000  
+Metal9          H         1.00         0.080000  
+Metal10         V         1.00         0.220000  
+Metal11         H         1.00         0.220000  
+
+Mapper: Libraries have:
+	domain _default_: 324 combo usable cells and 128 sequential usable cells
+      Mapping 'comp_pulse_another_design'...
+        Preparing the circuit
+          Pruning unused logic
+          Analyzing hierarchical boundaries
+          Aggressive hierarchical optimization: disabled
+          Propagating constants
+        Done preparing the circuit
+          Structuring (delay-based) comp_pulse_another_design...
+          Done structuring (delay-based) comp_pulse_another_design
+Multi-threaded Virtual Mapping    (8 threads, 8 of 24 CPUs usable)
+          Structuring (delay-based) comp_pulse_edge...
+          Done structuring (delay-based) comp_pulse_edge
+        Mapping component comp_pulse_edge...
+          Structuring (delay-based) comp_edge_resolve...
+          Done structuring (delay-based) comp_edge_resolve
+        Mapping component comp_edge_resolve...
+          Structuring (delay-based) edge_sel...
+            Starting partial collapsing  edge_sel
+            Finished partial collapsing.
+            Starting redundancy-removal...
+            Finished redundancy-removal...
+          Done structuring (delay-based) edge_sel
+        Mapping component edge_sel...
+ 
+Global mapping target info
+==========================
+Cost Group 'default' target slack: Unconstrained
+
+Multi-threaded Technology Mapping (8 threads, 8 of 24 CPUs usable)
+          Restructuring (delay-based) edge_sel...
+          Done restructuring (delay-based) edge_sel
+        Optimizing component edge_sel...
+          Restructuring (delay-based) comp_edge_resolve...
+          Done restructuring (delay-based) comp_edge_resolve
+        Optimizing component comp_edge_resolve...
+          Restructuring (delay-based) comp_pulse_edge...
+          Done restructuring (delay-based) comp_pulse_edge
+        Optimizing component comp_pulse_edge...
+ 
+Global mapping timing result
+============================
+        Computing net loads.
+        Tracing clock networks.
+        Levelizing the circuit.
+        Computing delays.
+        Computing arrivals and requireds.
+ 
+ 
+Global mapping status
+=====================
+                                   Group   
+                                  Tot Wrst 
+                           Total  Weighted 
+Operation                   Area   Slacks  
+-------------------------------------------------------------------------------
+ global_map                  170        0 
+
+    Cost Group            Target    Slack    Diff.  Constr.
+-----------------------------------------------------------
+       default          unconst. unconst.              N.A. 
+
+ 
+Global incremental target info
+==============================
+Cost Group 'default' target slack: Unconstrained
+
+ 
+Global incremental timing result
+================================
+        Computing net loads.
+        Tracing clock networks.
+        Levelizing the circuit.
+        Computing delays.
+        Computing arrivals and requireds.
+ 
+ 
+Global incremental optimization status
+======================================
+                                   Group   
+                                  Tot Wrst 
+                           Total  Weighted 
+Operation                   Area   Slacks  
+-------------------------------------------------------------------------------
+ global_incr                 169        0 
+
+    Cost Group            Target    Slack    Diff.  Constr.
+-----------------------------------------------------------
+       default          unconst. unconst.              N.A. 
+
+
+Scan mapping status report
+==========================
+    Scan mapping: converting flip-flops that pass TDRC.
+    Scan mapping: bypassed.  You have to either 1) set attribute 'dft_scan_map_mode' to 'tdrc_pass' and run 'check_dft_rules' or 2) set attribute 'dft_scan_map_mode' to 'force_all'.
+
+    Scan mapping bypassed because no TDRC data is available: either command 'check_dft_rules' has not been run or TDRC data has been subsequently invalidated.
+PBS_Techmap-Global Mapping - Elapsed_Time 0, CPU_Time 0.8713619999999995
+stamp 'PBS_Techmap-Global Mapping' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) |  52.4(100.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Premap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:24) |  00:00:00(00:00:00) |  47.6(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Techmap-Global Mapping
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+Info    : Forcing flat compare. [CFM-212]
+        : The design hierarchies are too small to qualify for hierarchical comparison. Set the attribute wlec_hier_comp_threshold accordingly for hier compare
+Info    : Wrote formal verification information. [CFM-5]
+        : Wrote 'fv/comp_pulse_another_design/fv_map.fv.json' for netlist 'fv/comp_pulse_another_design/fv_map.v.gz'.
+Info    : Existing dofile found. Copied as fv/comp_pulse_another_design/rtl_to_fv_map.do~.
+Info    : Wrote dofile. [CFM-1]
+        : Dofile is 'fv/comp_pulse_another_design/rtl_to_fv_map.do'.
+        Computing net loads.
+PBS_TechMap-Datapath Postmap Operations - Elapsed_Time 1, CPU_Time 0.0
+stamp 'PBS_TechMap-Datapath Postmap Operations' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) |  52.4( 50.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Premap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:24) |  00:00:00(00:00:00) |  47.6(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Techmap-Global Mapping
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:01) |   0.0( 50.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Datapath Postmap Operations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+PBS_TechMap-Postmap HBO Optimizations - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_TechMap-Postmap HBO Optimizations' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) |  52.4( 50.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Premap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:24) |  00:00:00(00:00:00) |  47.6(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Techmap-Global Mapping
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:01) |   0.0( 50.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Datapath Postmap Operations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Postmap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+ Doing ConstProp on design:comp_pulse_another_design ... 
+
+    Automatically cost grouped 0 clock gate paths.
+  Decloning clock-gating logic from design:comp_pulse_another_design
+Info    : Could not declone clock-gating instances. [POPT-51]
+        : There are no clock-gating instances in the design 'design:comp_pulse_another_design'.
+        : The design should have 2 or more clock-gating instances for decloning.
+Clock-gating declone status
+===========================
+Total number of clock-gating instances before: 0
+Total number of clock-gating instances after : 0
+PBS_TechMap-Postmap Clock Gating - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_TechMap-Postmap Clock Gating' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) |  52.4( 50.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Premap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:24) |  00:00:00(00:00:00) |  47.6(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Techmap-Global Mapping
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:01) |   0.0( 50.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Datapath Postmap Operations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Postmap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Postmap Clock Gating
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+ hi_fo_buf                   169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+       hi_fo_buf         0  (        0 /        0 )  0.00
+
+ 
+Incremental optimization status
+===============================
+                                   Group   
+                                  Tot Wrst     Total - - DRC Totals - -
+                           Total  Weighted      Neg      Max       Max 
+Operation                   Area   Slacks      Slack    Trans      Cap 
+-------------------------------------------------------------------------------
+ init_delay                  169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+       crit_upsz         0  (        0 /        0 )  0.00
+    plc_bal_star         0  (        0 /        0 )  0.00
+     drc_buftimb         0  (        0 /        0 )  0.00
+          plc_st         0  (        0 /        0 )  0.00
+    plc_st_fence         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+      plc_laf_st         0  (        0 /        0 )  0.00
+ plc_laf_st_fence         0  (        0 /        0 )  0.00
+     drc_buftims         0  (        0 /        0 )  0.00
+            fopt         0  (        0 /        0 )  0.00
+   plc_laf_lo_st         0  (        0 /        0 )  0.00
+       plc_lo_st         0  (        0 /        0 )  0.00
+
+ 
+Local TNS optimization status
+=============================
+                                   Group   
+                                  Tot Wrst     Total - - DRC Totals - -
+                           Total  Weighted      Neg      Max       Max 
+Operation                   Area   Slacks      Slack    Trans      Cap 
+-------------------------------------------------------------------------------
+ init_tns                    169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+    plc_bal_star         0  (        0 /        0 )  0.00
+     drc_buftimb         0  (        0 /        0 )  0.00
+     drc_buftims         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+   plc_laf_lo_st         0  (        0 /        0 )  0.00
+       plc_lo_st         0  (        0 /        0 )  0.00
+            fopt         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+        setup_dn         0  (        0 /        0 )  0.00
+
+PBS_TechMap-Postmap Cleanup - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_TechMap-Postmap Cleanup' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) |  52.4( 50.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Premap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:24) |  00:00:00(00:00:00) |  47.6(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Techmap-Global Mapping
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:01) |   0.0( 50.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Datapath Postmap Operations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Postmap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Postmap Clock Gating
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Postmap Cleanup
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+PBS_Techmap-Post_MBCI - Elapsed_Time 0, CPU_Time 0.0
+stamp 'PBS_Techmap-Post_MBCI' being created for table 'pbs_debug'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:23) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:04 (Apr27) |  271.4 MB | PBS_Generic-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:01) |  52.4( 50.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic_Opt-Post
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Generic-Postgen HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Start
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_TechMap-Premap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:24) |  00:00:00(00:00:00) |  47.6(  0.0) |   16:07:05 (Apr27) |  271.4 MB | PBS_Techmap-Global Mapping
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:01) |   0.0( 50.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Datapath Postmap Operations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Postmap HBO Optimizations
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Postmap Clock Gating
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_TechMap-Postmap Cleanup
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:06 (Apr27) |  271.4 MB | PBS_Techmap-Post_MBCI
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+
+======================= Sequential Deletion Report =============================
+================================================================================
+
+##>=================== Cadence Confidential (Mapping-Logical) ===================
+##>Main Thread Summary:
+##>----------------------------------------------------------------------------------------
+##>STEP                           Elapsed       WNS       TNS     Insts      Area    Memory
+##>----------------------------------------------------------------------------------------
+##>M:Initial                            0         -         -        68       220       271
+##>M:Pre Cleanup                        0         -         -        68       220       271
+##>M:Setup                              0         -         -         -         -         -
+##>M:Launch ST                          0         -         -         -         -         -
+##>M:Design Partition                   0         -         -         -         -         -
+##>M:Create Partition Netlists          0         -         -         -         -         -
+##>M:Init Power                         0         -         -         -         -         -
+##>M:Budgeting                          0         -         -         -         -         -
+##>M:Derenv-DB                          0         -         -         -         -         -
+##>M:Debug Outputs                      0         -         -         -         -         -
+##>M:ST loading                         0         -         -         -         -         -
+##>M:Distributed                        0         -         -         -         -         -
+##>M:Timer                              0         -         -         -         -         -
+##>M:Assembly                           0         -         -         -         -         -
+##>M:DFT                                0         -         -         -         -         -
+##>M:DP Operations                      1         -         -        38       110       271
+##>M:Const Prop                         0         -         0        38       110       271
+##>M:Cleanup                            0         -         0        38       110       271
+##>M:MBCI                               0         -         -        38       110       271
+##>M:Misc                               0
+##>----------------------------------------------------------------------------------------
+##>Total Elapsed                        1
+##>========================================================================================
+Info    : Done mapping. [SYNTH-5]
+        : Done mapping 'comp_pulse_another_design'.
+        Computing net loads.
+     flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:             1              1                                      syn_map
+@file(run.tcl) 162: puts "Runtime & Memory after 'syn_map'"
+Runtime & Memory after 'syn_map'
+@file(run.tcl) 163: time_info MAPPED
+stamp 'MAPPED' being created for table 'default'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:04(00:00:00) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:06:41 (Apr27) |  150.1 MB | init
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:22) |  00:00:05(00:00:22) |  73.2( 88.0) |   16:07:03 (Apr27) |  271.4 MB | Elaboration
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:02) |  14.0(  8.0) |   16:07:05 (Apr27) |  271.4 MB | GENERIC
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:01) |  12.8(  4.0) |   16:07:06 (Apr27) |  271.4 MB | MAPPED
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: default, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+@file(run.tcl) 164: write_snapshot -outdir $_REPORTS_PATH -tag map
+
+
+Working Directory = /afs/ece.cmu.edu/usr/sbhasuth/gcd_gpdk/syn_another_design/WORK
+QoS Summary for comp_pulse_another_design
+================================================================================
+Metric                          generic         map            
+================================================================================
+Slack (ps):                       inf             inf
+  R2R (ps):                  no_value        no_value
+  I2R (ps):                  no_value        no_value
+  R2O (ps):                  no_value        no_value
+  I2O (ps):                  no_value        no_value
+  CG  (ps):                  no_value        no_value
+TNS (ps):                           0               0
+  R2R (ps):                  no_value        no_value
+  I2R (ps):                  no_value        no_value
+  R2O (ps):                  no_value        no_value
+  I2O (ps):                  no_value        no_value
+  CG  (ps):                  no_value        no_value
+Failing Paths:                      0               0
+Cell Area:                        226             110
+Total Cell Area:                  226             110
+Leaf Instances:                    68              38
+Total Instances:                   68              38
+Utilization (%):                 0.00            0.00
+Tot. Net Length (um):        no_value        no_value
+Avg. Net Length (um):        no_value        no_value
+Route Overflow H (%):        no_value        no_value
+Route Overflow V (%):        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value
+  Tot Cong:                  no_value        no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:00:06        00:00:01
+Real Runtime (h:m:s):        00:00:24        00:00:01
+CPU  Elapsed (h:m:s):        00:00:10        00:00:11
+Real Elapsed (h:m:s):        00:00:25        00:00:26
+Memory (MB):                   761.71          762.36
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:00:25
+Total Memory (MB):     762.36
+Executable Version:    18.14-s037_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
+
+
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : No clock. [RPT-10]
+        : There are no clocks in the design.
+        : Clock is not defined.
+Finished exporting design database to file 'reports/map_comp_pulse_another_design.db' for 'comp_pulse_another_design' (command execution time mm:ss cpu = 00:00, real = 00:00).
+Finished generating snapshot at stage map (command execution time mm:ss cpu = 00:00, real = 00:00).
+@file(run.tcl) 165: report_summary -directory $_REPORTS_PATH
+
+
+Working Directory = /afs/ece.cmu.edu/usr/sbhasuth/gcd_gpdk/syn_another_design/WORK
+QoS Summary for comp_pulse_another_design
+================================================================================
+Metric                          generic         map            
+================================================================================
+Slack (ps):                       inf             inf
+  R2R (ps):                  no_value        no_value
+  I2R (ps):                  no_value        no_value
+  R2O (ps):                  no_value        no_value
+  I2O (ps):                  no_value        no_value
+  CG  (ps):                  no_value        no_value
+TNS (ps):                           0               0
+  R2R (ps):                  no_value        no_value
+  I2R (ps):                  no_value        no_value
+  R2O (ps):                  no_value        no_value
+  I2O (ps):                  no_value        no_value
+  CG  (ps):                  no_value        no_value
+Failing Paths:                      0               0
+Cell Area:                        226             110
+Total Cell Area:                  226             110
+Leaf Instances:                    68              38
+Total Instances:                   68              38
+Utilization (%):                 0.00            0.00
+Tot. Net Length (um):        no_value        no_value
+Avg. Net Length (um):        no_value        no_value
+Route Overflow H (%):        no_value        no_value
+Route Overflow V (%):        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value
+  Tot Cong:                  no_value        no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:00:06        00:00:01
+Real Runtime (h:m:s):        00:00:24        00:00:01
+CPU  Elapsed (h:m:s):        00:00:10        00:00:11
+Real Elapsed (h:m:s):        00:00:25        00:00:26
+Memory (MB):                   761.71          762.36
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:00:25
+Total Memory (MB):     762.36
+Executable Version:    18.14-s037_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
+
+
+@file(run.tcl) 166: report_dp > $_REPORTS_PATH/map/${DESIGN}_datapath.rpt
+Beginning report datapath command
+Warning : The filename, column and line number information will not be available in the report. [RPT_DP-100]
+        : The attribute for getting HDL filename and line number is not set.
+@file(run.tcl) 169: foreach cg [vfind / -cost_group *] {
+  report_timing -group [list $cg] > $_REPORTS_PATH/${DESIGN}_[vbasename $cg]_post_map.rpt
+}
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+@file(run.tcl) 174: write_do_lec -revised_design fv_map -logfile ${_LOG_PATH}/rtl2intermediate.lec.log > ${_OUTPUTS_PATH}/rtl2intermediate.lec.do
+Info    : Forcing flat compare. [CFM-212]
+        : The design hierarchies are too small to qualify for hierarchical comparison. Set the attribute wlec_hier_comp_threshold accordingly for hier compare
+Info    : Wrote dofile. [CFM-1]
+        : Dofile is 'outputs/rtl2intermediate.lec.do'.
+@file(run.tcl) 186: set_db / .syn_opt_effort $MAP_OPT_EFF
+  Setting attribute of root '/': 'syn_opt_effort' = high
+@file(run.tcl) 187: syn_opt
+Current PLE settings:
+
+Aspect ratio        : 1.00
+Shrink factor       : 1.00
+Scale of res/length : 1.00
+Scale of cap/length : 1.00
+Net derating factor : 1.00
+Thermal factor      : 1.00
+Via Resistance      : 6.60 ohm (from qrc_tech_file)
+Site size           : 1.91 um (from lef [tech+cell])
+
+                                   Capacitance  
+  Layer                             / Length         Data source:
+Name        Direction Utilization  (pF/micron)       qrc_tech_file
+------------------------------------------------
+METAL_1         H         0.00        0.000210  
+METAL_2         V         1.00        0.000174  
+METAL_3         H         1.00        0.000174  
+METAL_4         V         1.00        0.000174  
+METAL_5         H         1.00        0.000174  
+METAL_6         V         1.00        0.000174  
+METAL_7         H         1.00        0.000175  
+METAL_8         V         1.00        0.000176  
+METAL_9         H         1.00        0.001240  
+METAL_10        V         1.00        0.000529  
+METAL_11        H         1.00        0.000686  
+
+                                    Resistance   
+  Layer                              / Length         Data source:
+Name        Direction Utilization  (ohm/micron)       qrc_tech_file
+-------------------------------------------------
+METAL_1         H         0.00         1.226667  
+METAL_2         V         1.00         0.755000  
+METAL_3         H         1.00         0.755000  
+METAL_4         V         1.00         0.755000  
+METAL_5         H         1.00         0.755000  
+METAL_6         V         1.00         0.755000  
+METAL_7         H         1.00         0.755000  
+METAL_8         V         1.00         0.267500  
+METAL_9         H         1.00         0.267500  
+METAL_10        V         1.00         0.097273  
+METAL_11        H         1.00         0.095455  
+
+                                        Area     
+  Layer                               / Length        Data source:
+Name        Direction Utilization     (micron)        lef_library
+-------------------------------------------------
+Metal1          H         0.00         0.060000  
+Metal2          V         1.00         0.080000  
+Metal3          H         1.00         0.080000  
+Metal4          V         1.00         0.080000  
+Metal5          H         1.00         0.080000  
+Metal6          V         1.00         0.080000  
+Metal7          H         1.00         0.080000  
+Metal8          V         1.00         0.080000  
+Metal9          H         1.00         0.080000  
+Metal10         V         1.00         0.220000  
+Metal11         H         1.00         0.220000  
+
+Info    : Incrementally optimizing. [SYNTH-7]
+        : Incrementally optimizing 'comp_pulse_another_design' using 'high' effort.
+    Automatically cost grouped 0 clock gate paths.
+  Decloning clock-gating logic from design:comp_pulse_another_design
+Info    : Could not declone clock-gating instances. [POPT-51]
+        : There are no clock-gating instances in the design 'design:comp_pulse_another_design'.
+Clock-gating declone status
+===========================
+Total number of clock-gating instances before: 0
+Total number of clock-gating instances after : 0
+ 
+Incremental optimization status
+===============================
+                                   Group   
+                                  Tot Wrst     Total - - DRC Totals - -
+                           Total  Weighted      Neg      Max       Max 
+Operation                   Area   Slacks      Slack    Trans      Cap 
+-------------------------------------------------------------------------------
+ init_iopt                   169        0         0         0        0
+ const_prop                  169        0         0         0        0
+ hi_fo_buf                   169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+       hi_fo_buf         0  (        0 /        0 )  0.00
+
+ 
+Incremental optimization status
+===============================
+                                   Group   
+                                  Tot Wrst     Total - - DRC Totals - -
+                           Total  Weighted      Neg      Max       Max 
+Operation                   Area   Slacks      Slack    Trans      Cap 
+-------------------------------------------------------------------------------
+ init_delay                  169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+        crit_msz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+       crit_slew         0  (        0 /        0 )  0.00
+        setup_dn         0  (        0 /        0 )  0.00
+    plc_bal_star         0  (        0 /        0 )  0.00
+     drc_buftimb         0  (        0 /        0 )  0.00
+          plc_st         0  (        0 /        0 )  0.00
+    plc_st_fence         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+      plc_laf_st         0  (        0 /        0 )  0.00
+ plc_laf_st_fence         0  (        0 /        0 )  0.00
+     drc_buftims         0  (        0 /        0 )  0.00
+   plc_laf_lo_st         0  (        0 /        0 )  0.00
+       plc_lo_st         0  (        0 /        0 )  0.00
+            fopt         0  (        0 /        0 )  0.00
+       crit_swap         0  (        0 /        0 )  0.00
+       mux2_swap         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       load_swap         0  (        0 /        0 )  0.00
+            fopt         0  (        0 /        0 )  0.00
+        setup_dn         0  (        0 /        0 )  0.00
+       load_isol         0  (        0 /        0 )  0.00
+       load_isol         0  (        0 /        0 )  0.00
+        move_for         0  (        0 /        0 )  0.00
+        move_for         0  (        0 /        0 )  0.00
+          rem_bi         0  (        0 /        0 )  0.00
+         offload         0  (        0 /        0 )  0.00
+          rem_bi         0  (        0 /        0 )  0.00
+         offload         0  (        0 /        0 )  0.00
+           phase         0  (        0 /        0 )  0.00
+        in_phase         0  (        0 /        0 )  0.00
+       merge_bit         0  (        0 /        0 )  0.00
+     merge_idrvr         0  (        0 /        0 )  0.00
+     merge_iload         0  (        0 /        0 )  0.00
+    merge_idload         0  (        0 /        0 )  0.00
+      merge_drvr         0  (        0 /        0 )  0.00
+      merge_load         0  (        0 /        0 )  0.00
+          decomp         0  (        0 /        0 )  0.00
+        p_decomp         0  (        0 /        0 )  0.00
+        levelize         0  (        0 /        0 )  0.00
+        mb_split         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+      mux_retime         0  (        0 /        0 )  0.00
+         buf2inv         0  (        0 /        0 )  0.00
+             exp         0  (        0 /        0 )  0.00
+       gate_deco         0  (        0 /        0 )  0.00
+       gcomp_tim         0  (        0 /        0 )  0.00
+  inv_pair_2_buf         0  (        0 /        0 )  0.00
+
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+         crr_220         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+         crr_200         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+         crr_300         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+         crr_400         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+         crr_111         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+         crr_210         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+         crr_110         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+         crr_101         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+         crr_201         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+         crr_211         0  (        0 /        0 )  0.00
+        crr_glob         0  (        0 /        0 )  0.00
+        crit_msz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+       crit_slew         0  (        0 /        0 )  0.00
+        setup_dn         0  (        0 /        0 )  0.00
+    plc_bal_star         0  (        0 /        0 )  0.00
+     drc_buftimb         0  (        0 /        0 )  0.00
+          plc_st         0  (        0 /        0 )  0.00
+    plc_st_fence         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+      plc_laf_st         0  (        0 /        0 )  0.00
+ plc_laf_st_fence         0  (        0 /        0 )  0.00
+     drc_buftims         0  (        0 /        0 )  0.00
+       plc_lo_st         0  (        0 /        0 )  0.00
+            fopt         0  (        0 /        0 )  0.00
+       crit_swap         0  (        0 /        0 )  0.00
+       mux2_swap         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       load_swap         0  (        0 /        0 )  0.00
+            fopt         0  (        0 /        0 )  0.00
+        setup_dn         0  (        0 /        0 )  0.00
+       load_isol         0  (        0 /        0 )  0.00
+       load_isol         0  (        0 /        0 )  0.00
+        move_for         0  (        0 /        0 )  0.00
+        move_for         0  (        0 /        0 )  0.00
+          rem_bi         0  (        0 /        0 )  0.00
+         offload         0  (        0 /        0 )  0.00
+          rem_bi         0  (        0 /        0 )  0.00
+         offload         0  (        0 /        0 )  0.00
+       merge_bit         0  (        0 /        0 )  0.00
+     merge_idrvr         0  (        0 /        0 )  0.00
+     merge_iload         0  (        0 /        0 )  0.00
+    merge_idload         0  (        0 /        0 )  0.00
+      merge_drvr         0  (        0 /        0 )  0.00
+      merge_load         0  (        0 /        0 )  0.00
+           phase         0  (        0 /        0 )  0.00
+          decomp         0  (        0 /        0 )  0.00
+        p_decomp         0  (        0 /        0 )  0.00
+        levelize         0  (        0 /        0 )  0.00
+        mb_split         0  (        0 /        0 )  0.00
+        in_phase         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+      mux_retime         0  (        0 /        0 )  0.00
+         buf2inv         0  (        0 /        0 )  0.00
+             exp         0  (        0 /        0 )  0.00
+       gate_deco         0  (        0 /        0 )  0.00
+       gcomp_tim         0  (        0 /        0 )  0.00
+  inv_pair_2_buf         0  (        0 /        0 )  0.00
+ init_drc                    169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+          plc_st         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+        drc_bufs         0  (        0 /        0 )  0.00
+        drc_fopt         0  (        0 /        0 )  0.00
+        drc_bufb         0  (        0 /        0 )  0.00
+      simple_buf         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+       crit_slew         0  (        0 /        0 )  0.00
+
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+          plc_st         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+      drc_buf_sp         0  (        0 /        0 )  0.00
+        drc_bufs         0  (        0 /        0 )  0.00
+        drc_fopt         0  (        0 /        0 )  0.00
+        drc_bufb         0  (        0 /        0 )  0.00
+      simple_buf         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+          plc_st         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+      drc_buf_sp         0  (        0 /        0 )  0.00
+        drc_bufs         0  (        0 /        0 )  0.00
+        drc_fopt         0  (        0 /        0 )  0.00
+        drc_bufb         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+
+ init_tns                    169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+            fopt         0  (        0 /        0 )  0.00
+    plc_bal_star         0  (        0 /        0 )  0.00
+     drc_buftimb         0  (        0 /        0 )  0.00
+     drc_buftims         0  (        0 /        0 )  0.00
+        crit_msz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+   plc_laf_lo_st         0  (        0 /        0 )  0.00
+       plc_lo_st         0  (        0 /        0 )  0.00
+       crit_swap         0  (        0 /        0 )  0.00
+       mux2_swap         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       load_swap         0  (        0 /        0 )  0.00
+            fopt         0  (        0 /        0 )  0.00
+        setup_dn         0  (        0 /        0 )  0.00
+       load_isol         0  (        0 /        0 )  0.00
+       load_isol         0  (        0 /        0 )  0.00
+        move_for         0  (        0 /        0 )  0.00
+        move_for         0  (        0 /        0 )  0.00
+          rem_bi         0  (        0 /        0 )  0.00
+         offload         0  (        0 /        0 )  0.00
+          rem_bi         0  (        0 /        0 )  0.00
+         offload         0  (        0 /        0 )  0.00
+       merge_bit         0  (        0 /        0 )  0.00
+     merge_idrvr         0  (        0 /        0 )  0.00
+     merge_iload         0  (        0 /        0 )  0.00
+    merge_idload         0  (        0 /        0 )  0.00
+      merge_drvr         0  (        0 /        0 )  0.00
+      merge_load         0  (        0 /        0 )  0.00
+           phase         0  (        0 /        0 )  0.00
+          decomp         0  (        0 /        0 )  0.00
+        p_decomp         0  (        0 /        0 )  0.00
+        levelize         0  (        0 /        0 )  0.00
+        mb_split         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+      mux_retime         0  (        0 /        0 )  0.00
+       crr_local         0  (        0 /        0 )  0.00
+         buf2inv         0  (        0 /        0 )  0.00
+
+ init_area                   169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+           undup         0  (        0 /        0 )  0.00
+         rem_buf         0  (        0 /        0 )  0.00
+         rem_inv         0  (        0 /        0 )  0.00
+        merge_bi         0  (        0 /        0 )  0.00
+      rem_inv_qb         0  (        0 /        0 )  0.00
+    seq_res_area         2  (        0 /        0 )  0.03
+        io_phase         0  (        0 /        0 )  0.00
+       gate_comp         0  (        0 /        0 )  0.00
+       gcomp_mog         0  (        0 /        0 )  0.00
+       glob_area         5  (        0 /        5 )  0.01
+       area_down         3  (        0 /        0 )  0.01
+      size_n_buf         1  (        0 /        0 )  0.00
+  gate_deco_area         0  (        0 /        0 )  0.00
+         rem_buf         0  (        0 /        0 )  0.00
+         rem_inv         0  (        0 /        0 )  0.00
+        merge_bi         0  (        0 /        0 )  0.00
+      rem_inv_qb         0  (        0 /        0 )  0.00
+
+ 
+Incremental optimization status
+===============================
+                                   Group   
+                                  Tot Wrst     Total - - DRC Totals - -
+                           Total  Weighted      Neg      Max       Max 
+Operation                   Area   Slacks      Slack    Trans      Cap 
+-------------------------------------------------------------------------------
+ init_delay                  169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+        crit_msz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+       crit_slew         0  (        0 /        0 )  0.00
+        setup_dn         0  (        0 /        0 )  0.00
+    plc_bal_star         0  (        0 /        0 )  0.00
+     drc_buftimb         0  (        0 /        0 )  0.00
+          plc_st         0  (        0 /        0 )  0.00
+    plc_st_fence         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+      plc_laf_st         0  (        0 /        0 )  0.00
+ plc_laf_st_fence         0  (        0 /        0 )  0.00
+     drc_buftims         0  (        0 /        0 )  0.00
+   plc_laf_lo_st         0  (        0 /        0 )  0.00
+       plc_lo_st         0  (        0 /        0 )  0.00
+            fopt         0  (        0 /        0 )  0.00
+       crit_swap         0  (        0 /        0 )  0.00
+       mux2_swap         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       load_swap         0  (        0 /        0 )  0.00
+            fopt         0  (        0 /        0 )  0.00
+        setup_dn         0  (        0 /        0 )  0.00
+       load_isol         0  (        0 /        0 )  0.00
+       load_isol         0  (        0 /        0 )  0.00
+        move_for         0  (        0 /        0 )  0.00
+        move_for         0  (        0 /        0 )  0.00
+          rem_bi         0  (        0 /        0 )  0.00
+         offload         0  (        0 /        0 )  0.00
+          rem_bi         0  (        0 /        0 )  0.00
+         offload         0  (        0 /        0 )  0.00
+           phase         0  (        0 /        0 )  0.00
+        in_phase         0  (        0 /        0 )  0.00
+       merge_bit         0  (        0 /        0 )  0.00
+     merge_idrvr         0  (        0 /        0 )  0.00
+     merge_iload         0  (        0 /        0 )  0.00
+    merge_idload         0  (        0 /        0 )  0.00
+      merge_drvr         0  (        0 /        0 )  0.00
+      merge_load         0  (        0 /        0 )  0.00
+          decomp         0  (        0 /        0 )  0.00
+        p_decomp         0  (        0 /        0 )  0.00
+        levelize         0  (        0 /        0 )  0.00
+        mb_split         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+      mux_retime         0  (        0 /        0 )  0.00
+         buf2inv         0  (        0 /        0 )  0.00
+             exp         0  (        0 /        0 )  0.00
+       gate_deco         0  (        0 /        0 )  0.00
+       gcomp_tim         0  (        0 /        0 )  0.00
+  inv_pair_2_buf         0  (        0 /        0 )  0.00
+
+ init_drc                    169        0         0         0        0
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+          plc_st         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+        drc_bufs         0  (        0 /        0 )  0.00
+        drc_fopt         0  (        0 /        0 )  0.00
+        drc_bufb         0  (        0 /        0 )  0.00
+      simple_buf         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+       crit_slew         0  (        0 /        0 )  0.00
+
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+          plc_st         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+        drc_bufs         0  (        0 /        0 )  0.00
+        drc_fopt         0  (        0 /        0 )  0.00
+        drc_bufb         0  (        0 /        0 )  0.00
+      simple_buf         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+
+
+           Trick     Calls     Accepts   Attempts    Time(secs) 
+-----------------------------------------------------------
+          plc_st         0  (        0 /        0 )  0.00
+        plc_star         0  (        0 /        0 )  0.00
+        drc_bufs         0  (        0 /        0 )  0.00
+        drc_fopt         0  (        0 /        0 )  0.00
+        drc_bufb         0  (        0 /        0 )  0.00
+             dup         0  (        0 /        0 )  0.00
+       crit_dnsz         0  (        0 /        0 )  0.00
+       crit_upsz         0  (        0 /        0 )  0.00
+
+Info    : Done incrementally optimizing. [SYNTH-8]
+        : Done incrementally optimizing 'comp_pulse_another_design'.
+        Computing net loads.
+     flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:             1              1                                      syn_opt
+@file(run.tcl) 188: write_snapshot -outdir $_REPORTS_PATH -tag syn_opt
+
+
+Working Directory = /afs/ece.cmu.edu/usr/sbhasuth/gcd_gpdk/syn_another_design/WORK
+QoS Summary for comp_pulse_another_design
+================================================================================
+Metric                          generic         map             syn_opt        
+================================================================================
+Slack (ps):                       inf             inf             inf
+  R2R (ps):                  no_value        no_value        no_value
+  I2R (ps):                  no_value        no_value        no_value
+  R2O (ps):                  no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+TNS (ps):                           0               0               0
+  R2R (ps):                  no_value        no_value        no_value
+  I2R (ps):                  no_value        no_value        no_value
+  R2O (ps):                  no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+Failing Paths:                      0               0               0
+Cell Area:                        226             110             110
+Total Cell Area:                  226             110             110
+Leaf Instances:                    68              38              38
+Total Instances:                   68              38              38
+Utilization (%):                 0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:00:06        00:00:01        00:00:01
+Real Runtime (h:m:s):        00:00:24        00:00:01        00:00:01
+CPU  Elapsed (h:m:s):        00:00:10        00:00:11        00:00:12
+Real Elapsed (h:m:s):        00:00:25        00:00:26        00:00:27
+Memory (MB):                   761.71          762.36          757.36
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:00:26
+Total Memory (MB):     757.36
+Executable Version:    18.14-s037_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
+
+
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : No clock. [RPT-10]
+        : There are no clocks in the design.
+        : Clock is not defined.
+Finished exporting design database to file 'reports/syn_opt_comp_pulse_another_design.db' for 'comp_pulse_another_design' (command execution time mm:ss cpu = 00:00, real = 00:00).
+Finished generating snapshot at stage syn_opt (command execution time mm:ss cpu = 00:00, real = 00:00).
+@file(run.tcl) 189: report_summary -directory $_REPORTS_PATH
+
+
+Working Directory = /afs/ece.cmu.edu/usr/sbhasuth/gcd_gpdk/syn_another_design/WORK
+QoS Summary for comp_pulse_another_design
+================================================================================
+Metric                          generic         map             syn_opt        
+================================================================================
+Slack (ps):                       inf             inf             inf
+  R2R (ps):                  no_value        no_value        no_value
+  I2R (ps):                  no_value        no_value        no_value
+  R2O (ps):                  no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+TNS (ps):                           0               0               0
+  R2R (ps):                  no_value        no_value        no_value
+  I2R (ps):                  no_value        no_value        no_value
+  R2O (ps):                  no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value
+Failing Paths:                      0               0               0
+Cell Area:                        226             110             110
+Total Cell Area:                  226             110             110
+Leaf Instances:                    68              38              38
+Total Instances:                   68              38              38
+Utilization (%):                 0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value
+================================================================================
+CPU  Runtime (h:m:s):        00:00:06        00:00:01        00:00:01
+Real Runtime (h:m:s):        00:00:24        00:00:01        00:00:01
+CPU  Elapsed (h:m:s):        00:00:10        00:00:11        00:00:12
+Real Elapsed (h:m:s):        00:00:25        00:00:26        00:00:27
+Memory (MB):                   761.71          762.36          757.36
+================================================================================
+================================================================================
+Flow Settings:
+================================================================================
+Total Runtime (h:m:s): 00:00:26
+Total Memory (MB):     757.36
+Executable Version:    18.14-s037_1
+================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
+
+
+@file(run.tcl) 191: puts "Runtime & Memory after 'syn_opt'"
+Runtime & Memory after 'syn_opt'
+@file(run.tcl) 192: time_info OPT
+stamp 'OPT' being created for table 'default'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:04(00:00:00) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:06:41 (Apr27) |  150.1 MB | init
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:22) |  00:00:05(00:00:22) |  63.9( 84.6) |   16:07:03 (Apr27) |  271.4 MB | Elaboration
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:02) |  12.2(  7.7) |   16:07:05 (Apr27) |  271.4 MB | GENERIC
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:01) |  11.1(  3.8) |   16:07:06 (Apr27) |  271.4 MB | MAPPED
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:11(00:00:26) |  00:00:01(00:00:01) |  12.8(  3.8) |   16:07:07 (Apr27) |  271.4 MB | OPT
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: default, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+@file(run.tcl) 194: foreach cg [vfind / -cost_group *] {
+  report_timing -group [list $cg] > $_REPORTS_PATH/${DESIGN}_[vbasename $cg]_post_opt.rpt
+}
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+@file(run.tcl) 206: report_dp > $_REPORTS_PATH/${DESIGN}_datapath_incr.rpt
+Beginning report datapath command
+Warning : The filename, column and line number information will not be available in the report. [RPT_DP-100]
+        : The attribute for getting HDL filename and line number is not set.
+@file(run.tcl) 207: report_messages > $_REPORTS_PATH/${DESIGN}_messages.rpt
+@file(run.tcl) 208: write_snapshot -outdir $_REPORTS_PATH -tag final
+
+
+Working Directory = /afs/ece.cmu.edu/usr/sbhasuth/gcd_gpdk/syn_another_design/WORK
+QoS Summary for comp_pulse_another_design
+==========================================================================================
+Metric                          generic         map             syn_opt         final          
+==========================================================================================
+Slack (ps):                       inf             inf             inf             inf
+  R2R (ps):                  no_value        no_value        no_value        no_value
+  I2R (ps):                  no_value        no_value        no_value        no_value
+  R2O (ps):                  no_value        no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value        no_value
+TNS (ps):                           0               0               0               0
+  R2R (ps):                  no_value        no_value        no_value        no_value
+  I2R (ps):                  no_value        no_value        no_value        no_value
+  R2O (ps):                  no_value        no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value        no_value
+Failing Paths:                      0               0               0               0
+Cell Area:                        226             110             110             110
+Total Cell Area:                  226             110             110             110
+Leaf Instances:                    68              38              38              38
+Total Instances:                   68              38              38              38
+Utilization (%):                 0.00            0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value        no_value
+==========================================================================================
+CPU  Runtime (h:m:s):        00:00:06        00:00:01        00:00:01        00:00:00
+Real Runtime (h:m:s):        00:00:24        00:00:01        00:00:01        00:00:00
+CPU  Elapsed (h:m:s):        00:00:10        00:00:11        00:00:12        00:00:12
+Real Elapsed (h:m:s):        00:00:25        00:00:26        00:00:27        00:00:27
+Memory (MB):                   761.71          762.36          757.36          757.36
+==========================================================================================
+==========================================================================================
+Flow Settings:
+==========================================================================================
+Total Runtime (h:m:s): 00:00:26
+Total Memory (MB):     757.36
+Executable Version:    18.14-s037_1
+==========================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
+
+
+Warning : Possible timing problems have been detected in this design. [TIM-11]
+        : The design is 'comp_pulse_another_design'.
+Warning : No clock. [RPT-10]
+        : There are no clocks in the design.
+        : Clock is not defined.
+Finished exporting design database to file 'reports/final_comp_pulse_another_design.db' for 'comp_pulse_another_design' (command execution time mm:ss cpu = 00:00, real = 00:00).
+Finished generating snapshot at stage final (command execution time mm:ss cpu = 00:00, real = 00:00).
+@file(run.tcl) 209: report_summary -directory $_REPORTS_PATH
+
+
+Working Directory = /afs/ece.cmu.edu/usr/sbhasuth/gcd_gpdk/syn_another_design/WORK
+QoS Summary for comp_pulse_another_design
+==========================================================================================
+Metric                          generic         map             syn_opt         final          
+==========================================================================================
+Slack (ps):                       inf             inf             inf             inf
+  R2R (ps):                  no_value        no_value        no_value        no_value
+  I2R (ps):                  no_value        no_value        no_value        no_value
+  R2O (ps):                  no_value        no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value        no_value
+TNS (ps):                           0               0               0               0
+  R2R (ps):                  no_value        no_value        no_value        no_value
+  I2R (ps):                  no_value        no_value        no_value        no_value
+  R2O (ps):                  no_value        no_value        no_value        no_value
+  I2O (ps):                  no_value        no_value        no_value        no_value
+  CG  (ps):                  no_value        no_value        no_value        no_value
+Failing Paths:                      0               0               0               0
+Cell Area:                        226             110             110             110
+Total Cell Area:                  226             110             110             110
+Leaf Instances:                    68              38              38              38
+Total Instances:                   68              38              38              38
+Utilization (%):                 0.00            0.00            0.00            0.00
+Tot. Net Length (um):        no_value        no_value        no_value        no_value
+Avg. Net Length (um):        no_value        no_value        no_value        no_value
+Route Overflow H (%):        no_value        no_value        no_value        no_value
+Route Overflow V (%):        no_value        no_value        no_value        no_value
+MBCI(%) (bits/gate) :            0.00            0.00            0.00            0.00
+Norm Cong Hotspot Area:
+  Max Cong:                  no_value        no_value        no_value        no_value
+  Tot Cong:                  no_value        no_value        no_value        no_value
+==========================================================================================
+CPU  Runtime (h:m:s):        00:00:06        00:00:01        00:00:01        00:00:00
+Real Runtime (h:m:s):        00:00:24        00:00:01        00:00:01        00:00:00
+CPU  Elapsed (h:m:s):        00:00:10        00:00:11        00:00:12        00:00:12
+Real Elapsed (h:m:s):        00:00:25        00:00:26        00:00:27        00:00:27
+Memory (MB):                   761.71          762.36          757.36          757.36
+==========================================================================================
+==========================================================================================
+Flow Settings:
+==========================================================================================
+Total Runtime (h:m:s): 00:00:26
+Total Memory (MB):     757.36
+Executable Version:    18.14-s037_1
+==========================================================================================
+Total Cell Area =  Cell Area + Physical Cell Area
+Total Instances =  Leaf Instances + Physical Instances
+
+
+
+
+@file(run.tcl) 210: write_hdl  > ${_OUTPUTS_PATH}/${DESIGN}_m.v
+@file(run.tcl) 212: write_sdc > ${_OUTPUTS_PATH}/${DESIGN}_m.sdc
+Finished SDC export (command execution time mm:ss (real) = 00:00).
+@file(run.tcl) 214: write_sdf -timescale ns -precision 3 > ${_OUTPUTS_PATH}/${DESIGN}_m.sdf
+Warning : Default value for an option has changed in this release. [WSDF-104]
+        : Default value for -setuphold has changed from split to merge_always. Specify '-setuphold split' to preserve the behavior of the previous release.
+        : Specify the option explicitly.
+Warning : Default value for an option has changed in this release. [WSDF-104]
+        : Default value for -recrem has changed from split to merge_always. Specify '-recrem split' to preserve the behavior of the previous release.
+@file(run.tcl) 222: write_do_lec -golden_design fv_map -revised_design ${_OUTPUTS_PATH}/${DESIGN}_m.v -logfile  ${_LOG_PATH}/intermediate2final.lec.log > ${_OUTPUTS_PATH}/intermediate2final.lec.do
+Info    : Forcing flat compare. [CFM-212]
+        : The design hierarchies are too small to qualify for hierarchical comparison. Set the attribute wlec_hier_comp_threshold accordingly for hier compare
+Info    : Wrote formal verification information. [CFM-5]
+        : Wrote 'fv/comp_pulse_another_design/comp_pulse_another_design_mv.fv.json' for netlist 'outputs/comp_pulse_another_design_m.v'.
+Info    : Wrote dofile. [CFM-1]
+        : Dofile is 'outputs/intermediate2final.lec.do'.
+@file(run.tcl) 226: puts "Final Runtime & Memory."
+Final Runtime & Memory.
+@file(run.tcl) 227: time_info FINAL
+stamp 'FINAL' being created for table 'default'
+
+  Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:04(00:00:00) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:06:41 (Apr27) |  150.1 MB | init
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:22) |  00:00:05(00:00:22) |  63.9( 84.6) |   16:07:03 (Apr27) |  271.4 MB | Elaboration
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:09(00:00:24) |  00:00:00(00:00:02) |  12.2(  7.7) |   16:07:05 (Apr27) |  271.4 MB | GENERIC
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:10(00:00:25) |  00:00:00(00:00:01) |  11.1(  3.8) |   16:07:06 (Apr27) |  271.4 MB | MAPPED
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:11(00:00:26) |  00:00:01(00:00:01) |  12.8(  3.8) |   16:07:07 (Apr27) |  271.4 MB | OPT
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+ 00:00:11(00:00:26) |  00:00:00(00:00:00) |   0.0(  0.0) |   16:07:07 (Apr27) |  271.4 MB | FINAL
+--------------------+---------------------+--------------+--------------------+-----------+----------------------
+Number of threads: 8 * 1   (id: default, time_info v1.57)
+Info: (*N*) indicates data that was populated from previously saved time_info database
+Info: CPU time includes time of parent + longest thread
+@file(run.tcl) 228: puts "============================"
+============================
+@file(run.tcl) 229: puts "Synthesis Finished ........."
+Synthesis Finished .........
+@file(run.tcl) 230: puts "============================"
+============================
+@file(run.tcl) 232: file copy [get_db / .stdout_log] ${_LOG_PATH}/.
+@file(run.tcl) 233: suspend
+
+Execution has been suspended temporarily.
+Enter 'resume' to continue.
+Enter 'stop_suspend' to stop script execution
+[SUSPEND]genus:root: 1> report_gates
+============================================================
+  Generated by:           Genus(TM) Synthesis Solution 18.14-s037_1
+  Generated on:           Apr 27 2020  04:07:23 pm
+  Module:                 comp_pulse_another_design
+  Operating conditions:   PVT_0P9V_125C 
+  Interconnect mode:      global
+  Area mode:              physical library
+============================================================
+
+                             
+  Gate    Instances   Area       Library    
+--------------------------------------------
+AOI22XL          14   28.728    slow_vdd1v0 
+DFFRHQX1          2   12.312    slow_vdd1v0 
+DFFRX2            1    7.524    slow_vdd1v0 
+NAND2X1           2    2.052    slow_vdd1v0 
+NAND2XL           7    7.182    slow_vdd1v0 
+NOR2BX2           2    5.472    slow_vdd1v0 
+NOR2X2            1    1.710    slow_vdd1v0 
+OR2X1             1    1.368    slow_vdd1v0 
+TLATX1            8   43.776    slow_vdd1v0 
+--------------------------------------------
+total            38  110.124                
+
+
+                                        
+     Type      Instances   Area  Area % 
+----------------------------------------
+sequential            11  63.612   57.8 
+logic                 27  46.512   42.2 
+physical_cells         0   0.000    0.0 
+----------------------------------------
+total                 38 110.124  100.0 
+
+[SUSPEND]genus:root: 1> exit
+Normal exit.

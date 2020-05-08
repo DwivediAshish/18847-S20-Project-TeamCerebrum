@@ -1,0 +1,52 @@
+# CPF
+set_cpf_version 2.0
+
+# technology data
+source ../INPUT/common_platform.cpf
+
+# design data
+set_hierarchy_separator "/"
+
+set_design chip
+
+# Power/ground nets
+create_power_nets -nets VDD -voltage 1.1
+create_ground_nets -nets VSS
+
+# Power domains
+create_power_domain -name PD -default
+update_power_domain -name PD -primary_power_net VDD \
+                             -primary_ground_net VSS
+
+# Operating conditions
+create_nominal_condition -name nom -voltage 1.1
+update_nominal_condition -name nom -library_set ls_sl
+
+# Power modes
+create_power_mode -name PM -domain_conditions {PD@nom} -default
+update_power_mode -name PM -sdc_files ../INPUT/chip_m.sdc
+
+# Operating corners
+create_operating_corner -name sl_oc -voltage 0.9 -library_set ls_sl -temperature 125 -process 1
+create_operating_corner -name fl_oc -voltage 1.1 -library_set ls_fl -temperature 0 -process 1
+create_operating_corner -name sh_oc -voltage 1.08 -library_set ls_sh -temperature 125 -process 1
+create_operating_corner -name fh_oc -voltage 1.32 -library_set ls_fh -temperature 0 -process 1
+
+# Analysis views
+create_analysis_view -name av_sl -mode PM -domain_corners {PD@sl_oc}
+create_analysis_view -name av_fl -mode PM -domain_corners {PD@fl_oc}
+create_analysis_view -name av_sh -mode PM -domain_corners {PD@sh_oc}
+create_analysis_view -name av_fh -mode PM -domain_corners {PD@fh_oc}
+
+# Create virtual power domain for 1.8 V I/O supply (no instances added)
+# Needed to establish the correct netlist connectivity for I/O cells
+create_power_nets -nets VDDIOR -voltage 1.8
+create_power_domain -name PD_VIRT_IOR
+update_power_domain -name PD_VIRT_IOR -primary_power_net VDDIOR \
+                                      -primary_ground_net VSS
+create_global_connection -net VDDIOR -pins VDDIOR
+create_global_connection -net VSS -pins VSSIOR
+create_global_connection -net VDD -pins VDD
+create_global_connection -net VSS -pins VSS
+
+end_design
