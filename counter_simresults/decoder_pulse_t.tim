@@ -1,0 +1,79 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : decoder_pulse_t
+Version: J-2014.09-SP4
+Date   : Thu Apr 30 13:24:53 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: outgoing_line_valid_reg
+              (rising edge-triggered flip-flop)
+  Endpoint: outgoing_line_valid
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  decoder_pulse_t    5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  outgoing_line_valid_reg/CK (DFFR_X1)                    0.00       0.00 r
+  outgoing_line_valid_reg/Q (DFFR_X1)                     0.10       0.10 r
+  outgoing_line_valid (out)                               0.00       0.10 r
+  data arrival time                                                  0.10
+  --------------------------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: outgoing_line_reg[7]
+              (rising edge-triggered flip-flop)
+  Endpoint: outgoing_line[7]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  decoder_pulse_t    5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  outgoing_line_reg[7]/CK (DFFS_X1)        0.00       0.00 r
+  outgoing_line_reg[7]/Q (DFFS_X1)         0.09       0.09 r
+  outgoing_line[7] (out)                   0.00       0.09 r
+  data arrival time                                   0.09
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: outgoing_line_reg[6]
+              (rising edge-triggered flip-flop)
+  Endpoint: outgoing_line[6]
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  decoder_pulse_t    5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  outgoing_line_reg[6]/CK (DFFS_X1)        0.00       0.00 r
+  outgoing_line_reg[6]/Q (DFFS_X1)         0.09       0.09 r
+  outgoing_line[6] (out)                   0.00       0.09 r
+  data arrival time                                   0.09
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1

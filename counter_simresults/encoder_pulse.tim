@@ -1,0 +1,88 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nworst 3
+        -max_paths 3
+Design : encoder_pulse
+Version: J-2014.09-SP4
+Date   : Tue Mar 31 15:32:17 2020
+****************************************
+
+Operating Conditions: typical   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: counter_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: outgoing_line
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  encoder_pulse      5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  counter_reg[1]/CK (DFFR_X1)              0.00       0.00 r
+  counter_reg[1]/QN (DFFR_X1)              0.09       0.09 f
+  U29/Z (XOR2_X1)                          0.09       0.17 f
+  U28/ZN (NOR2_X1)                         0.05       0.22 r
+  U27/ZN (NAND4_X1)                        0.06       0.28 f
+  outgoing_line (out)                      0.00       0.28 f
+  data arrival time                                   0.28
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: counter_reg[2]
+              (rising edge-triggered flip-flop)
+  Endpoint: outgoing_line
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  encoder_pulse      5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  counter_reg[2]/CK (DFFR_X1)              0.00       0.00 r
+  counter_reg[2]/QN (DFFR_X1)              0.08       0.08 f
+  U30/Z (XOR2_X1)                          0.08       0.16 f
+  U28/ZN (NOR2_X1)                         0.04       0.20 r
+  U27/ZN (NAND4_X1)                        0.06       0.26 f
+  outgoing_line (out)                      0.00       0.26 f
+  data arrival time                                   0.26
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+  Startpoint: counter_reg[1]
+              (rising edge-triggered flip-flop)
+  Endpoint: outgoing_line
+            (output port)
+  Path Group: (none)
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  encoder_pulse      5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  counter_reg[1]/CK (DFFR_X1)              0.00       0.00 r
+  counter_reg[1]/QN (DFFR_X1)              0.10       0.10 r
+  U29/Z (XOR2_X1)                          0.08       0.18 r
+  U28/ZN (NOR2_X1)                         0.03       0.21 f
+  U27/ZN (NAND4_X1)                        0.04       0.25 r
+  outgoing_line (out)                      0.00       0.25 r
+  data arrival time                                   0.25
+  -----------------------------------------------------------
+  (Path is unconstrained)
+
+
+1
